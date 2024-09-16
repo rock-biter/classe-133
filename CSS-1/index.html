@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CSS Intro</title>
+		<!-- 1 modo: foglio di stile -->
+		<link rel="stylesheet" href="./css/app.css" />
+
+		<!-- 2 tag style -->
+		<style>
+			/* qui scriviamo CSS */
+
+			p {
+				line-height: 1.7em;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="hero">
+			<h1 id="main-title" class="title">Introduzione al CSS</h1>
+		</div>
+
+		<!-- 3 style inline -->
+		<p style="color: rgb(0, 0, 255)">
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, optio!
+		</p>
+
+		<section>
+			<h2 class="title h2">Introduzione</h2>
+			<p class="paragraph font-bold">
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam enim
+				fuga commodi,
+				<mark
+					>nemo quasi temporibus corporis recusandae dicta necessitatibus
+					quod</mark
+				>
+				, facilis ab ipsa libero tenetur accusamus voluptate, aspernatur veniam
+				vero!
+			</p>
+
+			<ul>
+				<li>ciao</li>
+				<li>ciao</li>
+				<li>ciao</li>
+				<li>ciao</li>
+			</ul>
+
+			<ol>
+				<li>ciao</li>
+				<li>ciao</li>
+				<li>ciao</li>
+				<li>ciao</li>
+			</ol>
+		</section>
+
+		<section id="approfondimento">
+			<h2 class="title h2">Approfondimento</h2>
+			<p class="paragraph">
+				Lorem ipsum dolor, <strong>sit amet consectetur</strong> adipisicing
+				elit. Aperiam enim fuga commodi, nemo quasi temporibus corporis
+				recusandae dicta
+				<a href="#" class="link">necessitatibus quod,</a> facilis ab ipsa libero
+				tenetur accusamus voluptate, aspernatur veniam vero!
+			</p>
+
+			<img class="content-img" src="./img/naruto-eremitica.webp" alt="" />
+			<img class="content-img" src="./img/naruto-eremitica.webp" alt="" />
+		</section>
+	</body>
+</html>

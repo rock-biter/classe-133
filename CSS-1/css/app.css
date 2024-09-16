@@ -1,0 +1,57 @@
+/* selezione tramine nome del tag */
+body {
+	background-color: azure;
+	font-size: 18px;
+	/* color: red;
+	text-align: left; */
+}
+
+p {
+	font-size: 18px;
+}
+
+ul {
+	list-style: none;
+}
+
+ol {
+	list-style: none;
+}
+
+/* Selezione tramite attributo id */
+#main-title {
+	/* color: blueviolet; */
+	font-size: 120px;
+	/* color: rgba(255, 255, 255, 1); */
+	/* opacity: 0.5; */
+}
+
+/* Selezione tramite singola classe */
+.title {
+	font-size: 32px;
+}
+
+.h2 {
+	color: rgb(62, 255, 68);
+}
+
+.hero {
+	height: 800px;
+	background-color: chocolate;
+	color: white;
+	background-image: url('../img/naruto-eremitica.webp');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.link {
+	height: 40px;
+	width: 200px;
+	background-color: blueviolet;
+	color: white;
+}
+
+.content-img {
+	width: 350px;
+}
