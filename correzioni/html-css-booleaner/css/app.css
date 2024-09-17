@@ -1,0 +1,79 @@
+body {
+	margin: 0;
+}
+
+figure {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+table th {
+	text-align: left;
+	white-space: nowrap;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.main-header {
+	background-color: rgb(77, 160, 254);
+	background-image: url('../img/pattern.png');
+	background-size: auto 100px;
+	padding-top: 30px;
+	padding-left: 16px;
+}
+
+.logo {
+	height: 50px;
+}
+
+.main-content,
+.sidebar {
+	padding: 0 32px;
+}
+
+.article-title {
+	font-size: 3rem;
+}
+
+.article-metadata {
+	color: #888888;
+}
+
+/* discendente */
+.article-metadata .author-name {
+	color: rgb(77, 160, 254);
+}
+
+.article-metadata .article-date {
+	font-size: 12px;
+}
+
+/* related articles */
+.related-article {
+	width: 300px;
+	height: 200px;
+	color: white;
+	font-size: 18px;
+	background-color: #888888;
+	padding: 8px;
+}
+
+/* utilities */
+.bg-blue {
+	background-color: rgb(47, 178, 190);
+}
+
+.bg-azure {
+	background-color: aquamarine;
+}
+
+.w-50 {
+	width: 50%;
+}
+
+.w-25 {
+	width: 25%;
+}
