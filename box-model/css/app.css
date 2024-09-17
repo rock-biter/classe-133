@@ -1,0 +1,76 @@
+/* RESET RULES */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: currentColor;
+}
+
+img {
+	max-width: 100%;
+}
+
+/* Project style */
+
+.box {
+	width: 50%;
+	height: 200px;
+	color: white;
+}
+
+.box.red {
+	background-color: red;
+}
+
+.box.green {
+	background-color: green;
+}
+
+.border {
+	border-color: cornflowerblue;
+	border-style: solid;
+	border-width: 12px; /* con 1 valore tutti i lati ufguali */
+	/* border-width: 20px 40px;
+	border-width: 10px 40px 20px;
+	border-width: 10px 20px 30px 40px; */
+}
+
+.box {
+	padding: 40px;
+}
+
+a.box {
+	display: inline-block;
+}
+
+/* UTILITIES */
+
+.mb-40 {
+	margin-bottom: 40px;
+}
+
+h2 {
+	font-size: 32px;
+}
+
+.title.text-red {
+	color: red;
+}
+
+.title {
+	font-size: 48px;
+	color: blue;
+}
+
+#main-title {
+	font-size: 12px;
+}

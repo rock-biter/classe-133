@@ -1,3 +1,5 @@
+/* RESET RULES */
+
 html {
 	font-family: 'Poppins', sans-serif;
 }
@@ -7,8 +9,9 @@ body {
 }
 
 figure {
-	margin-left: 0;
-	margin-right: 0;
+	/* margin-left: 0;
+	margin-right: 0; */
+	margin: 20px 0;
 }
 
 table th {
@@ -21,6 +24,7 @@ table {
 	border-collapse: collapse;
 }
 
+/* HEADER */
 .main-header {
 	background-color: rgb(77, 160, 254);
 	background-image: url('../img/pattern.png');
@@ -32,6 +36,8 @@ table {
 .logo {
 	height: 50px;
 }
+
+/* MAIN CONTENT */
 
 .main-content,
 .sidebar {
