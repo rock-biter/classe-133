@@ -1,0 +1,45 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: currentColor;
+	text-decoration: none;
+}
+
+section {
+	padding: 20px;
+}
+
+.btn {
+	line-height: 30px;
+	display: inline-block;
+	background-color: cornflowerblue;
+	color: white;
+	border-radius: 999px;
+	padding: 0 20px;
+}
+
+/* SELETTORI AVANZATI */
+
+.btn:hover {
+	background-color: rgb(58, 100, 178);
+}
+
+.btn:active {
+	padding: 0 40px;
+}
+
+tr:nth-child(odd) {
+	background-color: aquamarine;
+}
+
+p ~ p {
+	margin-top: 20px;
+}
+
+[type] {
+	border: 3px solid red;
+}

@@ -74,13 +74,33 @@ body {
 }
 
 /* Task */
-.task {
+/* .task {
 	margin-bottom: 8px;
+}
+
+.task:last-child {
+	margin-bottom: 0;
+} */
+
+/* .task {
+	margin-top: 8px;
+}
+
+.task:first-child {
+	margin-top: 0;
+} */
+
+.task + .task {
+	margin-top: 12px;
 }
 
 /* tutti i discendenti di .task */
 .task * {
 	margin-right: 8px;
+}
+
+.task :last-child {
+	margin-right: 0;
 }
 
 .task__icon,
@@ -129,3 +149,7 @@ body {
 	padding: 80px 12px;
 	/* background-color: burlywood; */
 }
+
+/* .todolist :last-child {
+	border: 1px solid green;
+} */
