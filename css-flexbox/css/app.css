@@ -130,10 +130,42 @@ section {
 }
 
 /* ex 12 */
+#ex-12 .flex-container {
+	align-items: flex-start;
+}
+
 .basis-lg {
 	flex-basis: 200px;
+	width: 200px;
 }
 
 .basis-md {
 	flex-basis: 120px;
+	width: 120px;
+}
+
+/* ex 13 */
+
+#ex-13 .flex-container {
+	align-items: center;
+	flex-wrap: wrap;
+	align-content: space-between;
+	min-height: 400px;
+}
+
+#ex-13 .flex-item {
+	width: 150px;
+}
+
+/* ex 14 */
+
+#ex-14 .flex-container {
+}
+
+.shrink-0 {
+	flex-shrink: 0;
+}
+
+.shrink-2 {
+	flex-shrink: 2;
 }
