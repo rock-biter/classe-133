@@ -1,0 +1,178 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: currentColor;
+	text-decoration: none;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+/* LAYOUT */
+.container {
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.container-sm {
+	max-width: 720px;
+	margin: 0 auto;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.row-reverse {
+	flex-direction: row-reverse;
+}
+
+.col-100 {
+	width: 100%;
+}
+
+.col-80 {
+	width: 80%;
+}
+
+.col-40 {
+	width: 40%;
+}
+
+.col-60 {
+	width: 60%;
+}
+
+.col-33 {
+	width: calc(100% / 3);
+}
+
+.col-16 {
+	width: calc(100% / 6);
+}
+
+/* HEADER */
+.main-header {
+	padding: 16px 0;
+	background-color: aqua;
+}
+
+/* .navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+} */
+
+.navbar {
+}
+
+.navbar .menu {
+	display: flex;
+	gap: 16px;
+	align-items: center;
+}
+
+/* HERO */
+.hero .col-100 {
+	max-width: 720px;
+	margin: 0 auto;
+}
+
+.hero .row {
+	justify-content: center;
+}
+
+/* Footer */
+.page-footer {
+	background-color: #333;
+	color: white;
+}
+
+/* UTILITIES */
+.order-first {
+	order: -999;
+}
+
+.bg-gray {
+	background-color: #efefef;
+}
+
+.justify-between {
+	justify-content: space-between;
+}
+
+.items-center {
+	align-items: center;
+}
+
+/* DEBUG */
+.debug .navbar .row > * {
+	background-color: orange;
+	border: 2px dashed black;
+	padding: 8px;
+}
+
+.debug.hero {
+	background-color: blue;
+	color: white;
+	padding: 50px 0;
+}
+
+.debug.hero .row > * {
+	border: 2px dashed black;
+	background-color: violet;
+	min-height: 400px;
+}
+
+.debug.feature {
+	padding: 50px 0;
+}
+
+.debug.feature .row > * {
+	border: 2px dashed black;
+	min-height: 300px;
+}
+
+.debug.feature .col-40 {
+	background-color: pink;
+}
+
+.debug.feature .col-60 {
+	background-color: cornflowerblue;
+}
+
+.debug.cta-download {
+	padding: 50px 0;
+}
+
+.debug.cta-download .row > * {
+	background-color: green;
+	border: 2px dashed black;
+	color: white;
+	min-height: 600px;
+}
+
+.page-footer .debug {
+	padding: 30px 0;
+}
+
+.page-footer .debug .row > * {
+	min-height: 300px;
+}
+
+.page-footer .debug .row > .col-33 {
+	border: 2px dashed black;
+	background-color: salmon;
+}
+
+.page-footer .debug .row > .col-16 {
+	border: 2px dashed white;
+	background-color: lightseagreen;
+}
