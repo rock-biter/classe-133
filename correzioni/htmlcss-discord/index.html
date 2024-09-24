@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Discord Struttura</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./css/app.css" />
+	</head>
+	<body>
+		<!-- <header class="main-header debug">
+			<nav class="container navbar">
+				<a class="logo" href="#">Logo</a>
+				<ul class="menu">
+					<li>
+						<a href="#">link</a>
+					</li>
+					<li>
+						<a href="#">link</a>
+					</li>
+					<li>
+						<a href="#">link</a>
+					</li>
+					<li>
+						<a href="#">link</a>
+					</li>
+					<li>
+						<a href="#">link</a>
+					</li>
+				</ul>
+				<a class="login-cta" href="#">Login</a>
+			</nav>
+		</header> -->
+
+		<header class="main-header">
+			<nav class="container navbar">
+				<div class="row justify-between items-center">
+					<a class="logo" href="#">
+						<img src="./img/logo.svg" height="30" alt="" />
+					</a>
+
+					<ul class="menu">
+						<li class="menu__item">
+							<a href="#">Scarica</a>
+						</li>
+						<li class="menu__item">
+							<a href="#">Perché Discord</a>
+						</li>
+						<li class="menu__item">
+							<a href="#">Nitro</a>
+						</li>
+						<li class="menu__item">
+							<a href="#">Sicurezza</a>
+						</li>
+						<li class="menu__item">
+							<a href="#">Asistenza</a>
+						</li>
+					</ul>
+					<div>
+						<a class="btn btn--sm login-cta" href="#">Login</a>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<main>
+			<!-- contenuto principale della pagina -->
+			<section class="hero">
+				<div class="container-sm">
+					<div class="row">
+						<div class="col-100">
+							<h1 class="hero__title">Il tuo posto per parlare</h1>
+							<p class="hero__description">
+								Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe
+								harum odio quos aliquam vel distinctio itaque provident
+								nesciunt, a dolor? Facilis, sint, id nobis inventore eaque
+								assumenda, tenetur molestias sed nesciunt minima eum quo tempore
+								veritatis voluptatum aspernatur.
+							</p>
+
+							<div class="hero__cta">
+								<a class="btn" href="#">&darr; Scarica per Mac</a>
+								<a class="btn btn--dark" href="#"
+									>Apri discord sul tuo browser</a
+								>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- <section class="hero debug">
+				<div class="container">
+					<div class="row">
+						<div class="col-100">hero</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="hero debug">
+				<div class="container">
+					<div class="row">
+						<div class="col-80">hero</div>
+					</div>
+				</div>
+			</section> -->
+
+			<section class="feature">
+				<div class="container">
+					<div class="row">
+						<div class="col-60">
+							<figure class="feture__image">
+								<img src="./img/item1.svg" alt="" />
+							</figure>
+						</div>
+						<div class="col-40">
+							<h2 class="feature__title">
+								Un luogo a invito con tutto lo spazio necessario per parlare
+							</h2>
+							<p class="feature__description">
+								Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed
+								exercitationem commodi quos corporis numquam repudiandae et
+								nostrum nulla unde nemo!
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="feature bg-gray">
+				<div class="container">
+					<div class="row">
+						<div class="col-60">
+							<figure class="feture__image">
+								<img src="./img/item2.svg" alt="" />
+							</figure>
+						</div>
+						<div class="col-40 order-first">
+							<h2 class="feature__title">Dove trovarsi è facile</h2>
+							<p class="feature__description">
+								Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed
+								exercitationem commodi quos corporis numquam repudiandae et
+								nostrum nulla unde nemo!
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="feature">
+				<div class="container">
+					<div class="row">
+						<div class="col-60">
+							<figure class="feture__image">
+								<img src="./img/item3.svg" alt="" />
+							</figure>
+						</div>
+						<div class="col-40">
+							<h2 class="feature__title">Da pochi a un fandom</h2>
+							<p class="feature__description">
+								Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed
+								exercitationem commodi quos corporis numquam repudiandae et
+								nostrum nulla unde nemo!
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="cta-download bg-gray">
+				<div class="container">
+					<div class="row">
+						<div class="col-100">
+							<h2 class="cta-download__title">Da pochi a un fandom</h2>
+							<p class="cta-download__description">
+								Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed
+								exercitationem commodi quos corporis numquam repudiandae et
+								nostrum nulla unde nemo!
+							</p>
+
+							<figure class="cta-download__image">
+								<img src="./img/item4-big.svg" alt="" />
+							</figure>
+
+							<p class="cta__title">
+								<strong>Pronto ad iniziare la tua avventura</strong>
+							</p>
+							<a class="btn btn--brand" href="#">&darr; Scarica per Mac</a>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="page-footer">
+			<!-- footer -->
+			<div class="">
+				<div class="container">
+					<div class="row">
+						<div class="col-33">1/3</div>
+						<div class="col-16">
+							<div class="widget">
+								<strong class="widget__title"> Titolo </strong>
+								<ul class="widget__menu">
+									<li><a href="#">link</a></li>
+									<li><a href="#">link</a></li>
+									<li><a href="#">link</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-16">
+							<div class="widget">
+								<strong class="widget__title"> Titolo </strong>
+								<ul class="widget__menu">
+									<li><a href="#">link</a></li>
+									<li><a href="#">link</a></li>
+									<li><a href="#">link</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-16">
+							<div class="widget">
+								<strong class="widget__title"> Titolo </strong>
+								<ul class="widget__menu">
+									<li><a href="#">link</a></li>
+									<li><a href="#">link</a></li>
+									<li><a href="#">link</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-16">
+							<div class="widget">
+								<strong class="widget__title"> Titolo </strong>
+								<ul class="widget__menu">
+									<li><a href="#">link</a></li>
+									<li><a href="#">link</a></li>
+									<li><a href="#">link</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="colophon">
+				<div class="container">
+					<div class="row justify-between items-center">
+						<a class="logo" href="#">
+							<img src="./img/logo.svg" height="30" alt="" />
+						</a>
+						<a class="btn btn--sm btn--brand" href="#">Bottone</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

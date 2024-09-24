@@ -70,9 +70,6 @@ ol {
 	align-items: center;
 } */
 
-.navbar {
-}
-
 .navbar .menu {
 	display: flex;
 	gap: 16px;
