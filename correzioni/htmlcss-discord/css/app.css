@@ -1,3 +1,11 @@
+:root {
+	--brand-color: #7289da;
+	--dark-color: #23272a;
+	--container-width: 1024px;
+	--button-size: 40px;
+	--button-bg: #ffffff;
+}
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -23,14 +31,14 @@ img {
 }
 
 /* LAYOUT */
-.container {
-	max-width: 1024px;
+.container,
+.container-sm {
+	max-width: var(--container-width);
 	margin: 0 auto;
 }
 
 .container-sm {
-	max-width: 800px;
-	margin: 0 auto;
+	--container-width: 800px;
 }
 
 .row {
@@ -204,7 +212,7 @@ img {
 }
 
 .widget__title {
-	color: #7289da;
+	color: var(--brand-color);
 	font-weight: 400;
 	line-height: 2em;
 	margin-bottom: 8px;
@@ -226,18 +234,18 @@ img {
 }
 
 .colophon .row {
-	border-top: 1px solid #7289da;
+	border-top: 1px solid var(--brand-color);
 	padding-top: 20px;
 }
 
 /* Components */
 .btn {
 	display: inline-block;
-	line-height: 40px;
+	line-height: var(--button-size);
 	border-radius: 999px;
-	padding: 0px 20px;
+	padding: 0px calc(var(--button-size) * 0.5);
 	font-size: 18px;
-	background-color: white;
+	background-color: var(--button-bg);
 	color: black;
 }
 
@@ -246,18 +254,19 @@ img {
 } */
 
 .btn.btn--dark {
-	background-color: black;
+	/* background-color: black; */
+	--button-bg: black;
 	color: white;
 }
 
 .btn.btn--sm {
-	line-height: 30px;
-	padding: 0px 15px;
+	--button-size: 30px;
 	font-size: 14px;
 }
 
 .btn.btn--brand {
-	background-color: #7289da;
+	/* background-color: var(--brand-color); */
+	--button-bg: var(--brand-color);
 	color: white;
 }
 
