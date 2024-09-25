@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>FLOAT</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+			rel="stylesheet"
+		/>
+
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+
+			html {
+				font-family: 'Open Sans', sans-serif;
+				font-size: 24px;
+				line-height: 1.5em;
+			}
+
+			a {
+				color: currentColor;
+				text-decoration: none;
+			}
+
+			ul,
+			ol {
+				list-style: none;
+			}
+
+			img {
+				max-width: 100%;
+			}
+
+			/* LAYOUT */
+
+			.container {
+				max-width: 1024px;
+				margin: 0 auto;
+			}
+
+			.row {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 20px 0;
+			}
+
+			.float-left {
+				float: left;
+				width: 450px;
+			}
+
+			.float-right {
+				float: right;
+				width: 450px;
+			}
+
+			.footer {
+				background-color: black;
+				color: white;
+				padding: 80px 0;
+			}
+
+			.clear {
+				clear: both;
+			}
+
+			.clearfix::after {
+				display: table;
+				clear: both;
+				content: '';
+			}
+		</style>
+	</head>
+	<body>
+		<section>
+			<div class="container">
+				<img class="float-left" src="./img/item1.svg" alt="" />
+				<h1>Ciao Float</h1>
+			</div>
+
+			<div class="container">
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+					tempora non saepe ad quia animi facilis nemo aspernatur illum
+					nesciunt. Iste nam placeat, vel facilis, aliquam alias, soluta
+					blanditiis doloremque numquam quo commodi. Accusantium exercitationem
+					dolore molestias eum! Eum harum distinctio quibusdam placeat? Sequi
+					quas magni error quos aliquid nobis.
+				</p>
+
+				<p>
+					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem nemo
+					consequuntur nostrum, eaque cumque, recusandae rem iure commodi
+					corporis natus neque similique consectetur cum totam omnis, quam
+					assumenda tenetur. Vero expedita temporibus eveniet dolorem voluptatem
+					consequuntur sit aliquam enim nihil aperiam culpa, accusantium illum
+					laborum neque non nemo eius consequatur.
+					<img class="float-right" src="./img/item2.svg" alt="" />
+				</p>
+
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam,
+					quidem earum laudantium cum accusamus saepe dolores non error ex ab!
+				</p>
+
+				<h2>Sottotitlo</h2>
+
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam,
+					quidem earum laudantium cum accusamus saepe dolores non error ex ab!
+				</p>
+
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+					tempora non saepe ad quia animi facilis nemo aspernatur illum
+					nesciunt. Iste nam placeat, vel facilis, aliquam alias, soluta
+					blanditiis doloremque numquam quo commodi. Accusantium exercitationem
+					dolore molestias eum! Eum harum distinctio quibusdam placeat? Sequi
+					quas magni error quos aliquid nobis.
+				</p>
+
+				<ul>
+					<li>ciaoneeeee</li>
+					<li>ciaoneeeee</li>
+					<li>ciaoneeeee</li>
+					<li>ciaoneeeee</li>
+					<li>ciaoneeeee</li>
+				</ul>
+
+				<h2>Altro sottotitolo</h2>
+
+				<p>
+					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium
+					quos sunt numquam velit, itaque reprehenderit dolorem aspernatur amet,
+					quis, nam harum natus modi quibusdam? Minima ipsum alias harum rem
+					sequi.
+				</p>
+
+				<p class="clearfix">
+					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum
+					quisquam delectus
+					<img class="float-right" src="./img/item2.svg" alt="" />
+					ipsam quibusdam labore dolor quas quo harum porro impedit alias rerum,
+					maiores consequatur dolorum exercitationem nemo ratione praesentium
+					corrupti!
+				</p>
+
+				<!-- <div class="clear" style="color: orange"></div> -->
+			</div>
+		</section>
+
+		<footer class="footer">
+			<div class="container">
+				<h2>Footer</h2>
+				<p>
+					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores
+					quam consequatur fugiat veritatis doloremque magnam, mollitia odit
+					aliquam reiciendis ex ducimus quia sunt sed, natus, quod laboriosam
+					obcaecati cupiditate expedita ut temporibus. Ab non voluptas quod!
+					Iure, temporibus sequi alias quam ullam mollitia! Ad aspernatur libero
+					voluptate quibusdam, suscipit commodi?
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>
