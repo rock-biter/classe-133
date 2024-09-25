@@ -1,0 +1,168 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-family: 'Open Sans', sans-serif;
+}
+
+a {
+	color: currentColor;
+	text-decoration: none;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+/* LAYOUT */
+
+.container {
+	max-width: 1024px;
+	margin: 0 auto;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px 0;
+}
+
+.row > * {
+	padding: 0 10px;
+}
+
+.row-cols-3 > * {
+	width: calc(100% / 3);
+}
+
+.col-33 {
+	width: calc(100% / 3);
+}
+
+/* header */
+.page-header {
+	background-color: #ff6900;
+	color: white;
+	padding: 20px 0;
+}
+
+.products {
+	padding: 80px 0;
+}
+
+/* footer */
+.page-footer {
+	background-color: #1a1a1a;
+	color: white;
+	padding: 20px 0;
+}
+
+/* CARD PRODUCT */
+
+/* .card > * {
+	border: 2px solid;
+} */
+
+.product__thumbnails img {
+	display: block;
+	width: 100%;
+}
+
+.product__thumbnails {
+	position: relative;
+}
+
+.product__thumbnails .hearts-icon,
+.product__thumbnails .tags {
+	position: absolute;
+}
+
+.product__thumbnails .hearts-icon {
+	background-color: white;
+	width: 36px;
+	aspect-ratio: 1;
+	top: 20px;
+	right: 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	z-index: 1;
+}
+
+.product__thumbnails .tags {
+	left: 0;
+	bottom: 20px;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	z-index: 1;
+}
+
+.product__thumbnails .tag {
+	font-size: 14px;
+	color: white;
+	line-height: 30px;
+	padding: 0px 8px;
+}
+
+.tag.tag--discount {
+	background-color: red;
+}
+
+.tag.tag--green {
+	background-color: green;
+}
+
+.product__thumbnails .hearts-icon:hover {
+	color: red;
+}
+
+.secondary-thumb {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	opacity: 0;
+	transition: opacity 300ms;
+}
+
+.card:hover .secondary-thumb {
+	opacity: 1;
+}
+
+.product__price {
+	color: red;
+	font-weight: 700;
+	font-size: 14px;
+}
+
+.product__price > :nth-child(2) {
+	color: black;
+	font-weight: 400;
+	text-decoration: line-through;
+}
+
+/* debug */
+
+.debug .container,
+.debug .row,
+.debug .row > * {
+	border: 2px solid;
+}
+
+.debug .row {
+	border-color: red;
+}
+
+.debug .row > * {
+	border-color: cornflowerblue;
+}
