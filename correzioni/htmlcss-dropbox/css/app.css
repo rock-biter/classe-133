@@ -1,0 +1,174 @@
+:root {
+	--blue: #0061ff;
+	--light-blue: #b4d0e7;
+	--light-gray: #f5f5f5;
+	--black: #000000;
+	--white: #ffffff;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-family: 'Open Sans', sans-serif;
+}
+
+a {
+	color: currentColor;
+	text-decoration: none;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+/* LAYOUT */
+.container-fluid {
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+.container-sm {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	row-gap: 50px;
+}
+
+.row > * {
+	padding: 0px 25px;
+}
+
+.row.no-gutter > * {
+	padding: 0px;
+}
+
+.col-12 {
+	width: 100%;
+}
+
+.col-4 {
+	width: calc(4 * 100% / 12);
+}
+
+.col-8 {
+	width: calc(8 * 100% / 12);
+}
+
+/* header */
+
+.logo {
+	display: block;
+}
+
+.page-header {
+	padding: 18px 14px;
+	font-size: 14px;
+}
+
+.navbar .row {
+	align-items: center;
+	justify-content: space-between;
+}
+
+.navbar .menu {
+	display: flex;
+	align-items: center;
+}
+
+.navbar .menu a {
+	display: block;
+	line-height: 34px;
+	padding: 0px 16px;
+}
+
+.navbar .menu a:not(.btn):hover {
+	color: var(--blue);
+}
+
+.navbar .menu .logo-wrapper {
+	padding-left: 0;
+}
+
+/* HERO */
+
+.hero {
+	background-color: var(--light-blue);
+	padding-top: 80px;
+	padding-bottom: 20px;
+}
+
+.hero__title {
+	font-size: 70px;
+}
+
+.hero .row + .row {
+	margin-top: 40px;
+}
+
+.hero__content {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	align-items: flex-start;
+}
+
+.hero__icon {
+	font-size: 50px;
+	margin-top: auto;
+}
+
+/* PLANs */
+
+.plans .card {
+	border: 1px solid;
+	min-height: 300px;
+}
+
+/* COMPONENTS */
+
+.btn {
+	display: inline-block;
+	background-color: var(--blue);
+	color: var(--white);
+	line-height: 44px;
+	padding: 0px 16px;
+	text-align: center;
+}
+
+/* DEBUG */
+.debug [class^='container'] {
+	border: 2px solid black;
+	padding: 20px;
+}
+
+.debug .row {
+	border: 2px solid red;
+	padding: 20px;
+}
+
+/* .debug [class^='col-'] {
+	border: 2px solid cornflowerblue;
+} */
+
+.debug .row > * {
+	padding: 20px;
+	border: 2px solid cornflowerblue;
+}
