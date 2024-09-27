@@ -37,12 +37,12 @@ img {
 }
 
 .container-sm {
-	max-width: 1000px;
+	max-width: 1050px;
 	margin: 0 auto;
 }
 
 .container {
-	max-width: 1200px;
+	max-width: 1250px;
 	margin: 0 auto;
 }
 
@@ -135,14 +135,160 @@ img {
 	margin-top: auto;
 }
 
+.hero__image {
+	width: 100%;
+	margin-bottom: -100px;
+}
+
 /* PLANs */
+
+.plans {
+	padding: 160px 0px 80px;
+}
 
 .plans .card {
 	border: 1px solid;
-	min-height: 300px;
 }
 
+.plans__title {
+	font-size: 45px;
+	margin-bottom: 36px;
+}
+
+.toggle-actions {
+	display: flex;
+	gap: 32px;
+	align-items: center;
+	margin-bottom: 32px;
+}
+
+.toggle-actions .input-radio {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.plans .card.plan {
+	height: 100%;
+}
+
+/* BUSINESS */
+.business {
+	padding-top: 80px;
+}
+
+.business .container-fluid {
+	margin-top: 80px;
+}
+
+.brands {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.brands > .brand-box {
+	width: 50%;
+	aspect-ratio: 1 / 1;
+	padding: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.brands > .brand-box img {
+	width: 100%;
+	height: auto;
+	max-width: 120px;
+	filter: invert(1);
+}
+
+.business .brand-focus {
+	background-color: var(--light-gray);
+	padding: 50px;
+}
+
+/* .business .container-fluid .row > * {
+	border: 1px solid;
+	aspect-ratio: 1 / 1;
+} */
+
 /* COMPONENTS */
+
+/* CARD PLAN */
+.card.plan {
+	--padding-x: 30px;
+}
+
+.card.plan .card__header {
+	padding: 12px var(--padding-x);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	border-bottom: 1px solid;
+}
+
+.card.plan .card__body {
+	padding: 32px var(--padding-x);
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+}
+
+.card.plan .features {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.card.plan .features > .features__item {
+	display: flex;
+	gap: 8px;
+}
+
+.card.plan .feature__icon {
+	width: 24px;
+	flex-shrink: 0;
+	text-align: center;
+}
+
+.card.plan .plan__points .feature__icon {
+	color: var(--blue);
+}
+
+.card.plan .plan_actions {
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+}
+
+.card.plan .plan_actions::after {
+	content: '';
+	display: block;
+	width: 70px;
+	height: 0;
+	border-bottom: 1px solid #939393;
+	/* height: 1px;
+	background-color: #939393; */
+}
+
+.card.plan .points__title {
+	margin-bottom: 24px;
+}
+
+.card.card--landscape.plan .plan__info {
+	flex-grow: 1;
+}
+
+.card.card--landscape.plan .plan__description {
+	max-width: 640px;
+}
+
+/* .card.plan .card__body > *:not(:last-child) {
+	margin-bottom: 40px;
+} */
+
+/* BUTTON */
 
 .btn {
 	display: inline-block;
