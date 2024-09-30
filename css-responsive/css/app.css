@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-family: 'Poppins', system-ui;
+}
+
+a {
+	color: currentColor;
+	text-decoration: none;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+/* layout */
+.container {
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	row-gap: 40px;
+}
+
+.row > * {
+	padding: 0px 20px;
+}
+
+.col-6 {
+	width: 50%;
+}
+
+.col-4 {
+	width: calc(4 * 100% / 12);
+}
+
+.col-8 {
+	width: calc(8 * 100% / 12);
+}
+
+.col-12 {
+	width: calc(12 * 100% / 12);
+}
+
+/* header */
+.page-header {
+	padding: 20px;
+	background-color: aliceblue;
+}
+
+/* utilities */
+.justify-between {
+	justify-content: space-between;
+}
+
+.items-center {
+	align-items: center;
+}
+
+.logo {
+	display: none;
+}
+
+/* hero */
+
+.hero {
+	background-image: url('../img/naruto.webp');
+	background-size: cover;
+	background-position: center;
+}
+
+.hero .row {
+	min-height: 500px;
+	align-items: center;
+	text-align: center;
+}
+
+.hero__title {
+	font-size: 200px;
+	color: white;
+}
+
+/* blog */
+
+.blog {
+	padding: 120px 0;
+}
+
+.blog__title {
+	font-size: 50px;
+	margin-bottom: 60px;
+}
+
+/* DESKTOP FIRST */
+/* medie queries */
+
+@media (max-width: 992px) {
+	/* hero */
+	.hero__title {
+		font-size: 130px;
+		color: white;
+	}
+}
+
+@media (max-width: 768px) {
+	/* navbar */
+	.logo {
+		display: block;
+	}
+
+	.logo-lg {
+		display: none;
+	}
+
+	/* hero */
+	.hero__title {
+		font-size: 100px;
+		color: white;
+	}
+
+	.blog .col-4 {
+		width: 50%;
+	}
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+	.hero__title {
+		color: orange;
+	}
+}
+
+@media (max-width: 576px) {
+	/* hero */
+	.hero__title {
+		font-size: 80px;
+		color: white;
+	}
+
+	.blog .col-4 {
+		width: 100%;
+	}
+}
