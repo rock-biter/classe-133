@@ -1,0 +1,46 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.container {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.col-12 {
+	width: 100%;
+}
+
+.hero {
+	background-image: url('../img/naruto.webp');
+	background-size: cover;
+	background-position: center;
+	/* width: 100vw; */ /* non usarlo mai */
+}
+
+.hero__subtitle {
+	text-align: center;
+	font-size: calc(1vw + 20px);
+	color: white;
+	text-transform: uppercase;
+}
+
+.hero__title {
+	text-align: center;
+	font-size: 16vw;
+	color: white;
+	text-transform: uppercase;
+}
+
+.hero .row {
+	min-height: 100vh;
+	padding: 100px 0;
+	align-items: center;
+}
