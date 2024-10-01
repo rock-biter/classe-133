@@ -111,6 +111,7 @@ img {
 	height: 100%;
 	object-fit: cover;
 	object-position: center;
+	aspect-ratio: 16/9; /*per video embeddato*/
 }
 
 .card__body .info__title {
@@ -204,6 +205,10 @@ img {
 
 	.page-header {
 		text-align: center;
+	}
+
+	.title-hidden {
+		display: none;
 	}
 
 	.card__body .card__info {
