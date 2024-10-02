@@ -1,0 +1,87 @@
+:root {
+	--brand-color: #adff2f;
+	--black: #000000;
+	--dark-gray: #282828;
+	--deep-blue: #141922;
+	--white: #ffffff;
+	--sidebar-width: 230px;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-family: 'Open Sans', sans-serif;
+}
+
+a {
+	color: currentColor;
+	text-decoration: none;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+body {
+	background-color: var(--deep-blue);
+	color: white;
+}
+
+.app {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.app__body {
+	flex-grow: 1;
+	display: flex;
+}
+
+.app__player {
+	background-color: var(--dark-gray);
+	/* TODO eliomare min with */
+	min-height: 90px;
+}
+
+.app__sidebar {
+	width: var(--sidebar-width);
+	flex-shrink: 0;
+	background-color: var(--black);
+}
+
+.app__content {
+	flex-grow: 1;
+}
+
+@media (max-width: 575.98px) {
+	.app__sidebar {
+		--sidebar-width: 50px;
+	}
+}
+
+/* DEBUG */
+.debug .app {
+	border: 2px solid red;
+	padding: 20px;
+}
+
+.debug .app__body,
+.debug .app__player {
+	border: 2px solid cornflowerblue;
+	padding: 20px;
+}
+
+.debug .app__body > * {
+	border: 2px solid orange;
+	padding: 20px;
+}
