@@ -4,15 +4,76 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Spotify</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+			integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
 		<link rel="stylesheet" href="./css/app.css" />
 	</head>
 	<body class="">
 		<div class="app">
 			<div class="app__body">
-				<div class="app__sidebar">sidebar</div>
-				<div class="app__content">content</div>
+				<header class="app__sidebar">sidebar</header>
+				<main class="app__content">content</main>
 			</div>
-			<div class="app__player">player</div>
+			<aside class="app__player">
+				<div class="track">
+					<figure class="track__album-image">
+						<img src="./img/sinister.jpeg" alt="" />
+					</figure>
+					<div class="track__info">
+						<h3>Sinister</h3>
+						<h4>Brano Nome</h4>
+					</div>
+					<div>
+						<button>
+							<i class="fa-regular fa-heart"></i>
+						</button>
+						<button>
+							<i class="fa-regular fa-folder"></i>
+						</button>
+					</div>
+				</div>
+				<div class="player">
+					<div class="player__controls">
+						<button class="controls__icon">
+							<i class="fa-solid fa-shuffle"></i>
+						</button>
+						<button class="controls__icon">
+							<i class="fa-solid fa-backward-step"></i>
+						</button>
+						<button class="controls__icon icon__play">
+							<i class="fa-regular fa-circle-play"></i>
+						</button>
+						<button class="controls__icon">
+							<i class="fa-solid fa-forward-step"></i>
+						</button>
+						<button class="controls__icon">
+							<i class="fa-solid fa-arrow-rotate-right"></i>
+						</button>
+					</div>
+					<div class="player__progress">
+						<div class="progress__time">0:25</div>
+						<div class="slider"></div>
+						<div class="total__time">4:56</div>
+					</div>
+				</div>
+				<div class="controls">
+					<button class="controls__icon icon__play">
+						<i class="fa-solid fa-list"></i>
+					</button>
+					<button class="controls__icon">
+						<i class="fa-solid fa-display"></i>
+					</button>
+					<button class="controls__icon">
+						<i class="fa-solid fa-volume-high"></i>
+					</button>
+					<div class="slider"></div>
+				</div>
+			</aside>
 		</div>
 	</body>
 </html>
