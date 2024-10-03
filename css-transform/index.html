@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Centrare un elemento in absolute</title>
+
+		<style>
+			.section {
+				background-color: orange;
+				padding: 100px;
+				min-height: 50vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.title {
+				font-size: 50px;
+				position: relative;
+			}
+
+			.dot {
+				width: 20px;
+				aspect-ratio: 1 / 1;
+				background-color: darkslategray;
+				border-radius: 50%;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+
+			.z-20 {
+				position: relative;
+				z-index: 10;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="section">
+			<h1 class="title">
+				<div class="dot"></div>
+				<span class="z-20"> titolo </span>
+			</h1>
+		</div>
+	</body>
+</html>
