@@ -16,7 +16,68 @@
 	<body class="">
 		<div class="app">
 			<div class="app__body">
-				<header class="app__sidebar">sidebar</header>
+				<header class="app__sidebar">
+					<a class="logo" href="./">
+						<img class="logo__lg" src="./img/logo.svg" alt="" />
+						<img class="logo__xs" src="./img/logo-small.svg" alt="" />
+					</a>
+
+					<nav class="main-menu">
+						<ul>
+							<li class="menu__item active">
+								<!-- ::before -->
+								<a href="#">
+									<img class="item-icon" src="./img/home.svg" alt="" />
+									<span class="item-text"> Home </span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#">
+									<img class="item-icon" src="./img/search.svg" alt="" />
+									<span class="item-text"> Cerca </span>
+								</a>
+							</li>
+							<li class="menu__item">
+								<a href="#">
+									<img class="item-icon" src="./img/libreria.svg" alt="" />
+									<span class="item-text"> La tua libreria </span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+
+					<div class="new-playlist">
+						<h3 class="new-playlist__title">Playlist</h3>
+						<button class="new-playlist__button">
+							<div class="button-icon">
+								<i class="fa-solid fa-plus"></i>
+							</div>
+							<span>Crea playlist</span>
+						</button>
+					</div>
+
+					<ul class="playlists">
+						<li class="playlist-item"><a href="#">Nome playlist</a></li>
+						<li class="playlist-item"><a href="#">Nome playlist</a></li>
+						<li class="playlist-item"><a href="#">Nome playlist</a></li>
+						<li class="playlist-item"><a href="#">Nome playlist</a></li>
+						<li class="playlist-item"><a href="#">Nome playlist</a></li>
+						<li class="playlist-item"><a href="#">Nome playlist</a></li>
+					</ul>
+
+					<div class="user-details">
+						<button class="app-download">
+							<img src="./img/download.svg" alt="" />
+							<span class="button-text"> Installa app </span>
+						</button>
+						<a class="user-profile" href="">
+							<div class="user-thumbnail">
+								<img src="./img/profile.svg" alt="" />
+							</div>
+							<span class="user-name"> John Doe </span>
+						</a>
+					</div>
+				</header>
 				<main class="app__content">content</main>
 			</div>
 			<aside class="app__player">
