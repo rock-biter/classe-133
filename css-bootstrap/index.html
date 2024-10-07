@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+			crossorigin="anonymous"
+		/>
+
+		<style>
+			.debug [class^='col'] {
+				/* border: 2px solid blue; */
+				/* background-color: blue; */
+				min-height: 100px;
+			}
+
+			.debug [class^='container'] {
+				/* border: 2px solid black; */
+				border: 2px solid black;
+				/* background-color: aquamarine; */
+				min-height: 100px;
+			}
+
+			.debug [class^='row'] {
+				border: 2px solid red;
+				/* background-color: red; */
+				min-height: 100px;
+			}
+
+			.post-card {
+				border: 2px solid black;
+			}
+
+			.container + .container {
+				margin-top: 40px;
+			}
+		</style>
+	</head>
+	<body class="">
+		<header>
+			<div class="container-fluid">
+				<div class="row justify-content-between">
+					<div class="col-auto">logo</div>
+
+					<ul class="col-auto">
+						<li><a href="#"> menu </a></li>
+					</ul>
+				</div>
+			</div>
+		</header>
+
+		<main>
+			<section>
+				<div class="container">
+					<h1>Titolo pagina</h1>
+				</div>
+			</section>
+
+			<section>
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="post-card">col</div>
+						</div>
+						<div class="col">
+							<div class="post-card">colonna</div>
+						</div>
+						<div class="col">
+							<div class="post-card">col</div>
+						</div>
+						<div class="col">
+							<div class="post-card">colonna</div>
+						</div>
+						<div class="col">
+							<div class="post-card">col</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="container">
+					<div class="row gy-4">
+						<div class="col-sm-6 col-lg-4">
+							<div class="post-card">col</div>
+						</div>
+						<div class="col-12 col-sm-6 col-lg-4">
+							<div class="post-card">colonna</div>
+						</div>
+						<div class="col-sm-6 col-lg-4">
+							<div class="post-card">col</div>
+						</div>
+						<div class="col-sm-6 col-lg-4">
+							<div class="post-card">col</div>
+						</div>
+						<div class="col-sm-6 col-lg-4">
+							<div class="post-card">colonna</div>
+						</div>
+						<div class="col-sm-6 col-lg-4">
+							<div class="post-card">col</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 col-xl-8">
+							<div class="post-card">col md 6 , col xl 8</div>
+						</div>
+						<div class="col-md-6 col-xl-4">
+							<div class="post-card">col 4</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="container">
+					<div class="row gy-4">
+						<div class="col-6 col-lg-2">
+							<div class="post-card">col 2</div>
+						</div>
+						<div class="col-6 col-lg-8">
+							<div class="post-card">col 10</div>
+						</div>
+						<div class="col-lg-2">
+							<div class="post-card">ciao</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="container">
+					<p class="h1">paragrafo</p>
+					<h2>sottotitolo</h2>
+				</div>
+				<div class="container-lg">
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro ab,
+						numquam iusto in, neque repellat ipsam eveniet delectus corrupti
+						dolorum perferendis suscipit sapiente ea culpa veniam illum tempore
+						qui illo!
+					</p>
+
+					<ul>
+						<li>item 1</li>
+						<li>item 2</li>
+						<li>item 2</li>
+						<li>item 2</li>
+						<li>item 2</li>
+					</ul>
+
+					<ol>
+						<li>ciao mamma</li>
+						<li>ciao mamma</li>
+						<li>ciao mamma</li>
+						<li>ciao mamma</li>
+						<li>ciao mamma</li>
+					</ol>
+				</div>
+			</section>
+		</main>
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+			crossorigin="anonymous"
+		></script>
+	</body>
+</html>
