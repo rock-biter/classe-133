@@ -1,0 +1,31 @@
+.my-bg-orange {
+	background-color: orange;
+}
+
+.navbar-brand img {
+	height: 40px;
+}
+
+.nav-link.active {
+	--bs-navbar-active-color: var(--bs-primary);
+}
+
+/* .ms_hero .card-img-overlay {
+	--bs-bg-opacity: 0.6;
+} */
+
+.ms_bg-opacity-50 {
+	--bs-bg-opacity: 0.5;
+}
+
+.ms_bg-opacity-30 {
+	--bs-bg-opacity: 0.3;
+}
+
+.ms_bg-opacity-10 {
+	--bs-bg-opacity: 0.1;
+}
+
+.ms_bg-opacity-90 {
+	--bs-bg-opacity: 0.9;
+}
