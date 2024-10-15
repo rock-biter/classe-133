@@ -33,32 +33,36 @@ const age = parseInt(prompt('Quanti anni hai?')) // number
 
 console.log(km, age)
 
-// - calcolare prezzo biglietto:
-const basePrice = km * 0.21
-console.log('prezzo base', basePrice)
+if (!isNaN(km) && !isNaN(age) && km >= 0 && age >= 0) {
+	// - calcolare prezzo biglietto:
+	const basePrice = km * 0.21
+	console.log('prezzo base', basePrice)
 
-let discountPercentage
+	let discountPercentage
 
-if (age < 18) {
-	discountPercentage = 20
-} else if (age > 65) {
-	discountPercentage = 40
+	if (age < 18) {
+		discountPercentage = 20
+	} else if (age > 65) {
+		discountPercentage = 40
+	} else {
+		discountPercentage = 0
+	}
+
+	console.log('Percentuale sconto: ', discountPercentage)
+	const discount = (basePrice * discountPercentage) / 100
+	console.log('sconto: ', discount)
+
+	const price = basePrice - discount
+
+	// - stampare il prezzo del biblietto
+	const formattedPrice = new Intl.NumberFormat('it-IT', {
+		style: 'currency',
+		currency: 'EUR',
+	}).format(price)
+
+	const humanPrice = price.toFixed(2)
+
+	console.log('prezzo: ', humanPrice + ' €', formattedPrice)
 } else {
-	discountPercentage = 0
+	alert('I dati inseriti non solo validi')
 }
-
-console.log('Percentuale sconto: ', discountPercentage)
-const discount = (basePrice * discountPercentage) / 100
-console.log('sconto: ', discount)
-
-const price = basePrice - discount
-
-// - stampare il prezzo del biblietto
-const formattedPrice = new Intl.NumberFormat('it-IT', {
-	style: 'currency',
-	currency: 'EUR',
-}).format(price)
-
-const humanPrice = price.toFixed(2)
-
-console.log('prezzo: ', humanPrice + ' €', formattedPrice)
