@@ -33,7 +33,10 @@ const age = parseInt(prompt('Quanti anni hai?')) // number
 
 console.log(km, age)
 
-if (!isNaN(km) && !isNaN(age) && km >= 0 && age >= 0) {
+const dataIsValid = !isNaN(km) && !isNaN(age) // boolean
+const dataIsBiggerThanZero = km >= 0 && age >= 0 // boolean
+
+if (dataIsValid && dataIsBiggerThanZero) {
 	// - calcolare prezzo biglietto:
 	const basePrice = km * 0.21
 	console.log('prezzo base', basePrice)
