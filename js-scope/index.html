@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			console.log('variables scope')
+
+			// variabilei dichiarate con var ha una visibilità di funzione
+
+			var name = 'Gianni' // Global scope
+			let altroName = 'Pippo' // Global scope
+
+			function getNumber() {
+				var number = Math.random() // Function Scope
+				const num = number // Block Scope
+				return number
+			}
+
+			if (getNumber() > 0.5) {
+				var message = 'Ciao' // Global Scope
+				const message2 = 'Ho vinto' // Block Scope
+			}
+
+			console.log(name, message) // le vediamo entrambe
+			// console.log(number) // errore numebr is not defined
+
+			console.log(altroName) // vedo perchè e globale
+			// console.log(num) // errore variables are not defined
+			// console.log(message2) // errore variables are not defined
+		</script>
+	</body>
+</html>
