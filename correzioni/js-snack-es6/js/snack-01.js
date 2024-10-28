@@ -36,8 +36,10 @@ let bike = racingBikes[0]
 for (let i = 1; i < racingBikes.length; i++) {
 	const currentBike = racingBikes[i]
 	// console.log(currentBike, bike)
+	const { weight } = bike
+	const { weight: currentWeight } = currentBike
 
-	if (currentBike.weight < bike.weight) {
+	if (currentWeight < weight) {
 		// console.log(
 		// 	`La bici: ${currentBike.name} è più leggera della bici: ${bike.name}`
 		// )
