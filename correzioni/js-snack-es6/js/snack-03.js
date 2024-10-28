@@ -5,6 +5,14 @@ console.log('EX 03')
 La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri.
  */
 
+/**
+ *
+ * questa funxiona prende un array e ritorna ..
+ * @param {Array} elements
+ * @param {Number} start
+ * @param {Number} end
+ * @returns {Array | undefined}
+ */
 function sliceArray(elements, start, end) {
 	/**
 	 * Controlli:
@@ -58,3 +66,13 @@ const newNumbers = sliceArray(numbers, 2, 4) // [9,7,8]
 console.log(newNumbers)
 
 // sliceArray([1, 2, 3], 'ciao', 12)
+// sliceArray
+
+/**
+ *
+ * @param {Object} user
+ * @returns {String}
+ */
+function getName(user) {
+	return user.name
+}
