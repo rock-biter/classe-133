@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-family: 'Open Sans', sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: currentColor;
+}
+
+:root {
+	--gutter-x: 1.25rem;
+	--primary-color: #e53170;
+	--link-color: #6ecbf2;
+}
+
+/* LAYOUT */
+
+.container {
+	max-width: 1460px;
+	margin: 0 auto;
+	padding: 0 var(--gutter-x);
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: calc(var(--gutter-x) * -1);
+	margin-right: calc(var(--gutter-x) * -1);
+	row-gap: calc(var(--gutter-x) * 2);
+}
+
+.row > * {
+	width: 100%;
+	padding: 0 var(--gutter-x);
+}
+
+.col-4 {
+	width: calc(100% / 3);
+}
+
+/* TEAMS */
+.teams {
+	padding: 100px 0;
+}
+
+.section__title {
+	color: var(--primary-color);
+	font-size: 48px;
+	text-align: center;
+	margin-bottom: 24px;
+}
+
+.section__description {
+	text-align: center;
+	margin-bottom: 36px;
+}
+
+/* TEAM CARD */
+.team-card {
+	background-color: black;
+	color: white;
+	display: flex;
+	align-items: center;
+}
+
+.team-card__info {
+	padding: 12px 24px;
+}
+
+.team-card__thumb {
+	width: 125px;
+	aspect-ratio: 1 / 1;
+	flex-shrink: 0;
+}
+
+.team-card__thumb img {
+	display: block;
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+.team-job {
+	font-size: 14px;
+}
+
+.team-email {
+	color: var(--link-color);
+	font-size: 14px;
+}
