@@ -59,13 +59,10 @@ console.log(teamsRowElement)
 
 renderTeamMembers(teamMembers, teamsRowElement)
 
-function renderTeamMembers(members, root) {
-	root.innerHTML = ''
+function getTeamCardHTML(member) {
+	const { name, role, img, email } = member
 
-	for (let i = 0; i < members.length; i++) {
-		const { name, role, img, email } = members[i]
-
-		const teamCardHTML = `
+	const teamCardHTML = `
   <div class="col-4">
     <div class="team-card">
       <figure class="team-card__thumb">
@@ -82,8 +79,14 @@ function renderTeamMembers(members, root) {
   </div>
 `
 
-		root.innerHTML += teamCardHTML
+	return teamCardHTML
+}
 
+function renderTeamMembers(members, root) {
+	root.innerHTML = ''
+
+	for (let i = 0; i < members.length; i++) {
+		root.innerHTML += getTeamCardHTML(members[i])
 		// console.log(member)
 	}
 }
@@ -124,6 +127,7 @@ submitEl.addEventListener('click', function () {
 	teamMembers.push(newTeamMember)
 
 	renderTeamMembers(teamMembers, teamsRowElement)
+	// teamsRowElement.innerHTML += getTeamCardHTML(newTeamMember)
 
 	console.log(teamMembers)
 })
