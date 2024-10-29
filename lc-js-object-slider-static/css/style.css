@@ -1,0 +1,101 @@
+/* CSS Reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Utilities */
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+/* # Carousel */
+
+#carousel {
+	height: 400px;
+	width: 700px;
+	margin: 30px auto;
+	position: relative;
+}
+
+.gallery {
+	height: 100%;
+}
+
+.gallery figure {
+	width: 100%;
+	height: 100%;
+	display: none;
+	position: relative;
+}
+
+.gallery figure.active {
+	display: block;
+}
+
+.gallery img {
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+	object-fit: cover;
+}
+
+.gallery figcaption {
+	position: absolute;
+	text-align: right;
+	bottom: 20px;
+	right: 20px;
+	left: 20px;
+	color: white;
+	text-shadow: 0 0 5px black;
+}
+
+.gallery figcaption h3 {
+	font-size: 1rem;
+}
+
+/* controls */
+
+.gallery .control {
+	position: absolute;
+	font-size: 24px;
+	z-index: 10;
+	top: 50%;
+	cursor: pointer;
+	transform: translateY(-50%);
+}
+
+.gallery .control.next {
+	left: calc(100% + 16px);
+}
+
+.gallery .control.prev {
+	right: calc(100% + 16px);
+}
+
+#carousel .thumbnails {
+	display: flex;
+	gap: 20px;
+	margin-top: 24px;
+}
+
+#carousel .thumbnails > .thumb {
+	flex-grow: 1;
+	flex-basis: 0;
+	flex-shrink: 0;
+	filter: grayscale(1);
+}
+
+#carousel .thumbnails > .thumb.active {
+	filter: grayscale(0);
+}
+
+#carousel .thumbnails img {
+	width: 100%;
+	/* height: auto; */
+	aspect-ratio: 16 / 9;
+	border-radius: 10px;
+	object-fit: cover;
+}
