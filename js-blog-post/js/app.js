@@ -17,7 +17,10 @@ function toggleOverlay() {
 
 overlayEl.addEventListener('click', (event) => {
 	console.dir(event.target)
-	if (event.target.tagName !== 'IMG') {
+	// if (event.target !== overlayImgEl) {
+	// 	toggleOverlay()
+	// }
+	if (event.target === overlayEl) {
 		toggleOverlay()
 	}
 })
