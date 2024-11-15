@@ -1,6 +1,7 @@
-console.log(process.argv)
+// console.log(process.argv)
 
-// const params = process.argv.slice(2)
+const params = process.argv.slice(2)
+console.log(params)
 // console.log(params)
 // // const a = +process.argv[2]
 // // const b = +process.argv[3]
