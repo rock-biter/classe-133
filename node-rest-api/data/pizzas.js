@@ -1,4 +1,4 @@
-const menu = [
+const pizzas = [
 	{
 		id: 1,
 		name: 'Margherita',
@@ -37,4 +37,4 @@ const menu = [
 	},
 ]
 
-module.exports = menu
+module.exports = pizzas
