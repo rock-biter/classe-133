@@ -1,45 +1,25 @@
 const express = require('express')
 const router = express.Router()
-const pizzas = require('../data/pizzas.js')
+const pizzaController = require('../controllers/pizzaController.js')
 
 // CRUD sulla risorsa pizza
-// index
-router.get('/', (req, res) => {
-	console.log("Ecco l'elenco delle pizze")
-	res.json(pizzas)
-})
+// PREFIX /pizzas
+// index /pizzas/
+router.get('/', pizzaController.index)
 
-// show
-router.get('/:id', (req, res) => {
-	const id = parseInt(req.params.id)
-	console.log(`Ecco la pizza con id: ${id}`)
+// show /pizzas/:id
+router.get('/:id', pizzaController.show)
 
-	const pizza = pizzas.find((p) => p.id === id)
+// store /pizzas/
+router.post('/', pizzaController.store)
 
-	res.json(pizza)
-})
+// update /pizzas/:id
+router.put('/:id', pizzaController.update)
 
-// store
-router.post('/', (req, res) => {
-	res.send('Creo una nuova pizza.')
-})
+// modify /pizzas/:id
+router.patch('/:id', pizzaController.modify)
 
-// update
-router.put('/:id', (req, res) => {
-	const id = req.params.id
-	res.send(`Aggiorno la pizza con id: ${id}`)
-})
-
-// modify
-router.patch('/:id', (req, res) => {
-	const id = req.params.id
-	res.send(`Modifico la pizza con id: ${id}`)
-})
-
-// destroy
-router.delete('/:id', (req, res) => {
-	const id = req.params.id
-	res.send(`Elimino la pizza con id: ${id}`)
-})
+// destroy /pizzas/:id
+router.delete('/:id', pizzaController.destroy)
 
 module.exports = router

@@ -1,39 +1,24 @@
 const express = require('express')
 const router = express.Router()
+const userController = require('../controllers/usercontroller.js')
 
 // CRUD sulla risorsa users
 // index
-router.get('/', (req, res) => {
-	res.send("Ecco l'elenco degli utenti")
-})
+router.get('/', userController.index)
 
 // show
-router.get('/:id', (req, res) => {
-	const id = req.params.id
-	res.send(`Ecco l'utente con id: ${id}`)
-})
+router.get('/:id', userController.show)
 
 // store
-router.post('/', (req, res) => {
-	res.send('Creo un nuovo utente.')
-})
+router.post('/', userController.store)
 
 // update
-router.put('/:id', (req, res) => {
-	const id = req.params.id
-	res.send(`Aggiorno l'utente con id: ${id}`)
-})
+router.put('/:id', userController.update)
 
 // modify
-router.patch('/:id', (req, res) => {
-	const id = req.params.id
-	res.send(`Modifico l'utente con id: ${id}`)
-})
+router.patch('/:id', userController.modify)
 
 // destroy
-router.delete('/:id', (req, res) => {
-	const id = req.params.id
-	res.send(`Elimino l'utente con id: ${id}`)
-})
+router.delete('/:id', userController.destroy)
 
 module.exports = router
