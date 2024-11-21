@@ -6,6 +6,8 @@ const app = express()
 const port = 3000
 
 app.use(express.static('public'))
+// body parser application/json
+app.use(express.json())
 
 app.get('/', (req, res) => {
 	console.log('root')

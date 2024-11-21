@@ -1,4 +1,5 @@
 const pizzas = require('../data/pizzas.js')
+let lastIndex = pizzas.at(-1).id
 
 function index(req, res) {
 	console.log("Ecco l'elenco delle pizze")
@@ -55,17 +56,75 @@ function show(req, res) {
 }
 
 function store(req, res) {
-	res.send('Creo una nuova pizza.')
+	// console.log(req.body)
+	const { name, ingredients, image } = req.body
+
+	// VALIDAZIONE DEI DATI
+
+	lastIndex++
+
+	const pizza = {
+		id: lastIndex,
+		name,
+		ingredients,
+		image,
+	}
+
+	// console.log(pizza)
+	pizzas.push(pizza)
+
+	res.status(201).send(pizza)
 }
 
 function update(req, res) {
-	const id = req.params.id
-	res.send(`Aggiorno la pizza con id: ${id}`)
+	const id = parseInt(req.params.id)
+
+	const pizza = pizzas.find((pizza) => pizza.id === id)
+
+	if (!pizza) {
+		res.status(404)
+
+		return res.json({
+			error: 'Pizza not found',
+			message: 'La pizza non è stata trovata.',
+		})
+	}
+
+	const { name, image, ingredients } = req.body
+	// VALIDAZIONE DATI DEL BODY
+	// update della pizza
+
+	pizza.name = name
+	pizza.ingredients = ingredients
+	pizza.image = image
+
+	res.json(pizza)
 }
 
 function modify(req, res) {
-	const id = req.params.id
-	res.send(`Modifico la pizza con id: ${id}`)
+	const id = parseInt(req.params.id)
+
+	const pizza = pizzas.find((pizza) => pizza.id === id)
+
+	if (!pizza) {
+		res.status(404)
+
+		return res.json({
+			error: 'Pizza not found',
+			message: 'La pizza non è stata trovata.',
+		})
+	}
+
+	const { name, image, ingredients } = req.body
+	// VALIDAZIONE DATI DEL BODY
+	// update della pizza
+	console.log(name, image, ingredients)
+
+	if (name) pizza.name = name
+	if (ingredients) pizza.ingredients = ingredients
+	if (image) pizza.image = image
+
+	res.json(pizza)
 }
 
 function destroy(req, res) {
