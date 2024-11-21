@@ -61,6 +61,19 @@ function store(req, res) {
 
 	// VALIDAZIONE DEI DATI
 
+	const errors = validate(req)
+
+	if (errors.length) {
+		// rispondere con un errore
+
+		res.status(400)
+
+		return res.json({
+			error: 'Invalid request',
+			messages: errors,
+		})
+	}
+
 	lastIndex++
 
 	const pizza = {
@@ -78,6 +91,19 @@ function store(req, res) {
 
 function update(req, res) {
 	const id = parseInt(req.params.id)
+
+	const errors = validate(req)
+
+	if (errors.length) {
+		// rispondere con un errore
+
+		res.status(400)
+
+		return res.json({
+			error: 'Invalid request',
+			messages: errors,
+		})
+	}
 
 	const pizza = pizzas.find((pizza) => pizza.id === id)
 
@@ -149,3 +175,25 @@ function destroy(req, res) {
 }
 
 module.exports = { index, show, store, update, modify, destroy }
+
+function validate(req) {
+	const { name, ingredients, image } = req.body
+
+	// VALIDAZIONE DEI DATI
+
+	const errors = []
+
+	if (!name) {
+		errors.push('Name is required')
+	}
+
+	if (!image) {
+		errors.push('Image is required')
+	}
+
+	if (!ingredients) {
+		errors.push('Ingredients is required')
+	}
+
+	return errors
+}
