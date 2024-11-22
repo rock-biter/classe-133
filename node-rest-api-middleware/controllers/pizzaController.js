@@ -29,31 +29,7 @@ function index(req, res) {
 }
 
 function show(req, res) {
-	const id = req.params.id
-	console.log(id)
-	console.log(`Ecco la pizza con id: ${id}`)
-
-	const pizza = pizzas.find((pizza) => pizza.id === id)
-	let result = pizza
-
-	if (!pizza) {
-		console.log('Pizza non trovata')
-
-		res.status(404)
-		result = {
-			error: 'Pizza not found',
-			message: 'La pizza non è stata trovata.',
-		}
-
-		// res.json({
-		// 	error: 'Pizza not found',
-		// 	message: 'La pizza non è stata trovata.',
-		// })
-
-		// return
-	}
-
-	res.json(result)
+	res.json(req.pizza)
 }
 
 function store(req, res) {
@@ -84,15 +60,12 @@ function store(req, res) {
 		image,
 	}
 
-	// console.log(pizza)
 	pizzas.push(pizza)
 
 	res.status(201).send(pizza)
 }
 
 function update(req, res) {
-	const id = req.params.id
-
 	const errors = validate(req)
 
 	if (errors.length) {
@@ -106,69 +79,30 @@ function update(req, res) {
 		})
 	}
 
-	const pizza = pizzas.find((pizza) => pizza.id === id)
-
-	if (!pizza) {
-		res.status(404)
-
-		return res.json({
-			error: 'Pizza not found',
-			message: 'La pizza non è stata trovata.',
-		})
-	}
-
 	const { name, image, ingredients } = req.body
 	// VALIDAZIONE DATI DEL BODY
-	// update della pizza
+	req.pizza.name = name
+	req.pizza.ingredients = ingredients
+	req.pizza.image = image
 
-	pizza.name = name
-	pizza.ingredients = ingredients
-	pizza.image = image
-
-	res.json(pizza)
+	res.json(req.pizza)
 }
 
 function modify(req, res) {
-	const id = req.params.id
-
-	const pizza = pizzas.find((pizza) => pizza.id === id)
-
-	if (!pizza) {
-		res.status(404)
-
-		return res.json({
-			error: 'Pizza not found',
-			message: 'La pizza non è stata trovata.',
-		})
-	}
-
 	const { name, image, ingredients } = req.body
 	// VALIDAZIONE DATI DEL BODY
-	// update della pizza
 	console.log(name, image, ingredients)
 
-	if (name) pizza.name = name
-	if (ingredients) pizza.ingredients = ingredients
-	if (image) pizza.image = image
+	if (name) req.pizza.name = name
+	if (ingredients) req.pizza.ingredients = ingredients
+	if (image) req.pizza.image = image
 
-	res.json(pizza)
+	res.json(req.pizza)
 }
 
 function destroy(req, res) {
-	const id = req.params.id
-	console.log(`Elimino la pizza con id: ${id}`)
-
-	const pizzaIndex = pizzas.findIndex((pizza) => pizza.id === id)
-
-	if (pizzaIndex === -1) {
-		res.status(404)
-
-		return res.json({
-			error: 'Pizza not found',
-			message: 'La pizza non è stata trovata.',
-		})
-	}
-	// console.log(pizzaIndex)
+	const pizza = req.pizza
+	const pizzaIndex = pizzas.findIndex((p) => p.id === pizza.id)
 
 	pizzas.splice(pizzaIndex, 1)
 

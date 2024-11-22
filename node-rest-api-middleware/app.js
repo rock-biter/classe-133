@@ -5,6 +5,8 @@ const usersRouter = require('./routers/users.js')
 const checkTime = require('./middlewares/checkTime.js')
 const numerifyId = require('./middlewares/numerifyId.js')
 const trimString = require('./middlewares/trimString.js')
+const errorsHandler = require('./middlewares/errorsHandler.js')
+const notFound = require('./middlewares/notFound.js')
 const app = express()
 const port = 3000
 
@@ -18,6 +20,7 @@ app.use(trimString) // trimma tutte le strighe che arrivano come dati nel body
 
 app.get('/', (req, res) => {
 	console.log('root')
+	// throw new Error('Errore finto')
 	res.send('Ciao mondo')
 })
 
@@ -28,6 +31,9 @@ app.get('/', (req, res) => {
 app.use('/pizzas', pizzasRouter)
 app.use('/users', usersRouter)
 // app.use('/comments', commentsRouter)
+
+app.use(errorsHandler)
+app.use(notFound)
 
 app.listen(port, () => {
 	console.log(`Server listening on port: ${port}`)
