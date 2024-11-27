@@ -1,0 +1,64 @@
+/* RESET */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: currentColor;
+}
+
+/* LAYOUT */
+.container {
+	max-width: 1024px;
+	margin: 0 auto;
+	padding: 0 1.5rem;
+}
+
+/* HEADER */
+.main-header {
+	background-color: aquamarine;
+	font-size: 2rem;
+	padding: 1rem 0;
+}
+
+/* TASKS */
+
+.tasks-section {
+	padding: 50px 0;
+}
+
+.task-item:not(:first-child) {
+	margin-top: 1rem;
+}
+
+.task-item__head {
+	margin-bottom: 0.5rem;
+}
+
+.task-title {
+	font-size: 1.25rem;
+	font-weight: bold;
+}
+
+.task-item__head {
+	display: flex;
+	/* justify-content: space-between; */
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.task-state {
+	background-color: orange;
+	display: block;
+	line-height: 2rem;
+	padding: 0 1.5rem;
+	border-radius: 0.5rem;
+}
