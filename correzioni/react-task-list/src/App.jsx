@@ -1,6 +1,6 @@
 import tasks from './tasks.js'
 
-function App() {
+export default function App() {
 
   console.log(tasks)
   // array con in_progress e backlog
@@ -104,4 +104,4 @@ function App() {
   )
 }
 
-export default App
+
