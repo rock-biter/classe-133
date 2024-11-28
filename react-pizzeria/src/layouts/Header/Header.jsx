@@ -7,7 +7,7 @@ export default function Header() {
       <div className="container">
         La nostra pizzeria
 
-        <Button />
+        <Button text='login' dark={true} />
       </div>
     </header>
   )

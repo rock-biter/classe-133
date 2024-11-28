@@ -8,7 +8,7 @@ export default function Footer() {
         qui c&apos;è il footer
       </div>
       <div className="container">
-        <Button />
+        <Button text='Seguici' />
       </div>
     </footer>
   )

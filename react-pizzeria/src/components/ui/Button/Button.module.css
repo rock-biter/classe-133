@@ -3,10 +3,18 @@
 	display: inline-block;
 	padding: 0 1rem;
 	line-height: 2.5rem;
-	background-color: mediumslateblue;
-	color: white;
 	border-radius: 0.5rem;
 	text-transform: uppercase;
 	font-size: 0.75rem;
 	white-space: nowrap;
+}
+
+.light_button {
+	background-color: mediumslateblue;
+	color: white;
+}
+
+.dark_button {
+	background-color: white;
+	color: mediumslateblue;
 }
