@@ -1,0 +1,13 @@
+.footer {
+	background-color: #333;
+	color: white;
+	padding: 80px 0;
+	text-align: center;
+}
+
+.container {
+	border-top: 1px solid #ffffff33;
+	border-bottom: 1px solid #ffffff33;
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
+}

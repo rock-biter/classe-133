@@ -1,0 +1,61 @@
+:root {
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+button {
+	border: none;
+	background-color: transparent;
+}
+
+a {
+	color: currentColor;
+	text-decoration: inherit;
+}
+
+img {
+	max-width: 100%;
+}
+
+body {
+	background-color: #efefef;
+}
+
+.container {
+	max-width: 1024px;
+	margin: 0 auto;
+	padding: 1.5rem;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -0.75rem;
+}
+
+.row > * {
+	padding: 0 0.75rem;
+	width: 100%;
+}
+
+.col-12 {
+	width: 100%;
+}
+
+.col-6 {
+	width: 50%;
+}
+
+.col-4 {
+	width: calc(4 * 100% / 12);
+}
