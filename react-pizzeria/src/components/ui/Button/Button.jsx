@@ -1,8 +1,14 @@
 import style from './Button.module.css'
 
-export default function Button({ className = '', dark = false , text = 'Testo pulsante' }) {
+export default function Button({ callback, className = '', dark = false , text = 'Testo pulsante' }) {
+
+  // console.log(callback)
+  // function onClick() {
+  //   console.log('add to cart')
+  // }
+
   return (
-    <button className={`${style.button} ${ dark === true ? style.dark_button : style.light_button } ${className}`}>
+    <button onClick={callback} className={`${style.button} ${ dark === true ? style.dark_button : style.light_button } ${className}`}>
       {text}
     </button>
   )

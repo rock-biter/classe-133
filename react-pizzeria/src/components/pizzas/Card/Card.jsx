@@ -9,6 +9,10 @@ export default function Card({ className = '', title = '', ingredients = [], pri
   const description = ingredients.join(', ') 
   const testo = 'ciao mamma'
 
+  function addToCart() {
+    console.log(`Aggingo la pizza ${title} al carrello.`)
+  }
+
   return (
     <div className={`${style.card} ${className}`}>
       <div className={style.image}>
@@ -23,7 +27,10 @@ export default function Card({ className = '', title = '', ingredients = [], pri
           <strong>Ingredients: </strong>{description}
         </p>
         <div>Prezzo: &euro; {price}</div>
-        { isAvailable && <Button text='Add to cart' /> }
+        {/* <button onClick={onClick}>
+          Add to cart
+        </button> */}
+        { isAvailable && <Button callback={addToCart} text='Add to cart' /> }
       </div>
     </div>
   )
