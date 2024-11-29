@@ -1,0 +1,43 @@
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	text-align: left;
+	width: 100%;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.icon {
+	font-size: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 2rem;
+	height: 2rem;
+	border-radius: 0.5rem;
+	background-color: #333;
+}
+
+.item {
+	background-color: black;
+	border-radius: 0.5rem;
+	padding: 1rem;
+	cursor: pointer;
+}
+
+.title {
+	font-size: 1.25rem;
+	font-weight: 700;
+	user-select: none;
+}
+
+.content {
+	font-size: 0.75rem;
+	line-height: 1.6;
+	margin-top: 1rem;
+}
