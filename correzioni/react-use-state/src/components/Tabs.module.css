@@ -1,0 +1,40 @@
+.tabs {
+	background-color: #dedede;
+	/* border: 2px solid; */
+	padding: 1rem;
+	border-radius: 0.8rem;
+	margin: 2rem 0;
+}
+
+.tabs_triggers {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+.button {
+	background-color: white;
+	line-height: 2rem;
+	padding: 0 1rem;
+	border-radius: 0.5rem;
+	border: none;
+	cursor: pointer;
+	transition: all 300ms;
+}
+
+.active {
+	background-color: rgb(19, 91, 226);
+	color: white;
+}
+
+.tab {
+	border-top: 1px solid #ababab;
+	padding-top: 1rem;
+}
+
+.title {
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+	display: block;
+}
