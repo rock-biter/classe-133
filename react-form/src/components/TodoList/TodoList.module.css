@@ -1,0 +1,21 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
+.todos {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	list-style: none;
+}
+
+.todo {
+	border-bottom: 1px solid #bababa55;
+	padding: 0.5rem 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}

@@ -54,3 +54,23 @@ img {
 	line-height: 1.6;
 	margin-bottom: 3rem;
 }
+
+form {
+	display: flex;
+	gap: 1rem;
+	height: 2rem;
+	margin-bottom: 2rem;
+	justify-content: flex-end;
+
+	* {
+		border-radius: 0.5rem;
+		border: none;
+		background-color: aliceblue;
+		padding: 0 1rem;
+	}
+
+	[type='submit'] {
+		background-color: mediumslateblue;
+		color: white;
+	}
+}
