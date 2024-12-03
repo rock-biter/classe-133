@@ -1,0 +1,30 @@
+.tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	align-items: center;
+	margin: 1rem 0;
+}
+
+.tag_item {
+	color: white;
+	border-radius: 8px;
+	padding: 4px 12px;
+	text-align: center;
+}
+
+.html {
+	background-color: cornflowerblue;
+}
+
+.js {
+	background-color: gold;
+}
+
+.css {
+	background-color: mediumslateblue;
+}
+
+.php {
+	background-color: cornflowerblue;
+}
