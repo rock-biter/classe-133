@@ -1,13 +1,14 @@
 import Card from './pizzas/Card/Card';
 import initialPizzas from '../pizzas';
 import { useState } from 'react';
+import { useEffect } from 'react';
 
 const initialFormData = {
   name: '',
   image: undefined,
   ingredients: '',
   price: '',
-  isAvailable: false
+  isAvailable: true
 }
 
 export default function Main() {
@@ -18,28 +19,36 @@ export default function Main() {
 
   const [formData,setFormData] = useState(initialFormData)
 
+  // reagire alla modifica di una proprietà di un oggetto di stato
+  useEffect(() => {
+    console.log(`is Available ${formData.isAvailable}`)
+  },[formData.isAvailable])
+
+  // console.log('render del componente')
+
   function handleFormData(e) {
 
-    console.log(e.target.name,e.target.value)
+    // console.log(e.target.name,e.target.value)
+    // console.log(e.target.type,e.target.checked)
     const key = e.target.name
-    const value = e.target.value
+    const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value
 
     // con for in per duplicare l'oggetto
-    const newFormData = {}
-    for (const k in formData) {
-      newFormData[k] = formData[k]
-    }
-    newFormData[key] = value
+    // const newFormData = {}
+    // for (const k in formData) {
+    //   newFormData[k] = formData[k]
+    // }
+    // newFormData[key] = value
 
     // con spread in 3 passaggi
     // const newFormData = {...formData}
     // newFormData[key] = value
 
     // con spread in 1 solo passaggio
-    // const newFormData = {
-    //   ...formData,
-    //   [key]: value,
-    // }
+    const newFormData = {
+      ...formData,
+      [key]: value,
+    }
 
     setFormData(newFormData)
 
@@ -98,7 +107,7 @@ export default function Main() {
               <input id="ingredients" name='ingredients' onChange={handleFormData} value={formData.ingredients} type="text" placeholder='Ingredienti'/>
             </div>
             <div className='form-field form-field-inline'>
-              <input onChange={handleFormData} name='isAvailable' id="avalable" type="checkbox"/>
+              <input onChange={handleFormData} checked={formData.isAvailable} name='isAvailable' id="avalable" type="checkbox"/>
               <label htmlFor="avalable">Dipsonibilità</label>
             </div>
             <input type="submit" value='Aggiungi' />

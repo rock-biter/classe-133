@@ -1,16 +1,18 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import todoStyle from './TodoList.module.css'
 const initialTodos = ['Fare la spesa', 'Pulire casa', 'Fare il bucato']
 
 export default function TodoList() {
 
   const [todos,setTodos] = useState(initialTodos)
-  const [newTodo,setNewTodo] = useState('fare la pasta')
+  const [filteredTodos,setFilteredTodos] = useState(todos)
+  const [newTodo,setNewTodo] = useState('')
+  const [search,setSearch] = useState('')
 
   function onTextChange(e) {
     console.log(e.target.value)
 
-    setNewTodo(e.target.value)
+    setNewTodo(e.target.value.trim())
   }
 
   function addTodo(e) {
@@ -45,6 +47,17 @@ export default function TodoList() {
     setTodos(todos.filter(todo => todo !== todoText ))
   }
 
+  useEffect(() => {
+    console.log('use effect')
+  },[])
+  
+  useEffect(() => {
+    console.log('Search is changed')
+    setFilteredTodos(todos.filter((todo) => {
+     return todo.toLowerCase().includes(search.toLowerCase())
+    }))
+  },[todos, search])
+
   return (
     <>
       <div className={`container ${todoStyle.header}`}>
@@ -54,9 +67,12 @@ export default function TodoList() {
           <input type="submit" value='Add' />
         </form>
       </div>
+      <div className="container">
+         <input onChange={(e) => setSearch(e.target.value)} type="text" placeholder='Filtra task' value={search}  />
+      </div>
       <div className='container'>
         <ul className={todoStyle.todos} >
-          {todos.map((todo) => (
+          {filteredTodos.map((todo) => (
             <li className={todoStyle.todo} key={todo}>
               <span>{todo}</span>
               <button onClick={() => deleteTodo(todo)}>Elimina</button>
