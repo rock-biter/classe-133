@@ -1,7 +1,8 @@
 import Card from './pizzas/Card/Card';
-import initialPizzas from '../pizzas';
+// import initialPizzas from '../pizzas';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import axios from 'axios'
 
 const initialFormData = {
   name: '',
@@ -11,9 +12,11 @@ const initialFormData = {
   isAvailable: true
 }
 
+export const API_BASE_URI = 'http://localhost:3000/'
+
 export default function Main() {
 
-  const [pizzas,setPizzas] = useState(initialPizzas)
+  const [pizzas,setPizzas] = useState([])
   // const [price,setPrice] = useState('7')
   // const [name,setName] = useState('Napoli')
 
@@ -25,6 +28,27 @@ export default function Main() {
   },[formData.isAvailable])
 
   // console.log('render del componente')
+
+  function fetchPizzas() {
+    axios.get(`${API_BASE_URI}pizzas`,{
+      params: {
+        ingredient: '',
+        limit: 4
+      },
+    })
+    .then(res => {
+      console.log('pizzas res',res)
+      setPizzas(res.data)
+    })
+    .catch(err => {
+      console.error(err)
+    })
+  }
+
+  useEffect(() => {
+    fetchPizzas()
+  },[])
+
 
   function handleFormData(e) {
 
@@ -55,6 +79,19 @@ export default function Main() {
     // console.log(newFormData)
   }
 
+  function deletePizza(id) {
+    console.log(id)
+    axios.delete(`${API_BASE_URI}pizzas/${id}`)
+    .then(() => {
+      // setPizzas(pizzas.filter((pizza) => pizza.id !== id ))
+      fetchPizzas()
+    })
+    .catch(err => {
+      console.error(err)
+      alert('Non è stato possibile eliminare la pizza selezionata.')
+    })
+  }
+
   // featch delle pizze dal server
 
   function addPizza(e) {
@@ -66,19 +103,28 @@ export default function Main() {
     if(formData.name.trim() === '' || isNaN(formData.price)) return
 
     const newPizza = {
-      id: Date.now(),
       ...formData,
       ingredients: formData.ingredients.split(',').map((ing) => ing.trim())
     }
 
-    setPizzas([...pizzas,newPizza])
-    setFormData(initialFormData) // resettare il form
+    axios.post(`${API_BASE_URI}pizzas`,newPizza)
+      .then(res => {
+        console.log(res)
+        setPizzas([...pizzas,res.data])
+        setFormData(initialFormData)
+      }).catch(err => {
+        alert(err.response.data.messages.join(' '))
+        console.error(err)
+      })
+
+    // setPizzas([...pizzas,newPizza])
+    // setFormData(initialFormData) // resettare il form
     // setName('')
     // setPrice('')
 
     // ...
 
-    console.log('aggiungo una pizza')
+    // console.log('aggiungo una pizza')
   }
 
   return (
@@ -119,7 +165,7 @@ export default function Main() {
             <div className="row">
               {pizzas.map((pizza) => (
                 <div key={pizza.id} className="col-6">
-                  <Card title={pizza.name} ingredients={pizza.ingredients} price={pizza.price} image={pizza.image} isAvailable={pizza.isAvailable}/>
+                  <Card onDelete={() => deletePizza(pizza.id)} title={pizza.name} ingredients={pizza.ingredients} price={pizza.price} image={pizza.image} isAvailable={pizza.isAvailable}/>
                 </div>
               ))}
             </div> :

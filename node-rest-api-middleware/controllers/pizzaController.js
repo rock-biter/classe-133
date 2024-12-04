@@ -34,7 +34,7 @@ function show(req, res) {
 
 function store(req, res) {
 	// console.log(req.body)
-	const { name, ingredients, image } = req.body
+	const { name, ingredients, image = '', price, isAvailable = true } = req.body
 
 	// VALIDAZIONE DEI DATI
 
@@ -58,6 +58,8 @@ function store(req, res) {
 		name,
 		ingredients,
 		image,
+		price,
+		isAvailable,
 	}
 
 	pizzas.push(pizza)
@@ -112,7 +114,7 @@ function destroy(req, res) {
 module.exports = { index, show, store, update, modify, destroy }
 
 function validate(req) {
-	const { name, ingredients, image } = req.body
+	const { name, ingredients, image = '', price, isAvailable = true } = req.body
 
 	// VALIDAZIONE DEI DATI
 
@@ -122,8 +124,8 @@ function validate(req) {
 		errors.push('Name is required')
 	}
 
-	if (!image) {
-		errors.push('Image is required')
+	if (!price) {
+		errors.push('Price is required')
 	}
 
 	if (!ingredients) {

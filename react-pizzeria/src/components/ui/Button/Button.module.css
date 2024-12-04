@@ -7,6 +7,7 @@
 	text-transform: uppercase;
 	font-size: 0.75rem;
 	white-space: nowrap;
+	cursor: pointer;
 }
 
 .light_button {

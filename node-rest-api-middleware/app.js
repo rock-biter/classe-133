@@ -1,5 +1,6 @@
 console.log('hello node')
 const express = require('express')
+const cors = require('cors')
 const pizzasRouter = require('./routers/pizzas.js')
 const usersRouter = require('./routers/users.js')
 const checkTime = require('./middlewares/checkTime.js')
@@ -10,6 +11,7 @@ const notFound = require('./middlewares/notFound.js')
 const app = express()
 const port = 3000
 
+app.use(cors())
 app.use(express.static('public'))
 
 // applichiamo il middleware globalmente

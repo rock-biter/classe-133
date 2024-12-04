@@ -28,3 +28,12 @@
 	font-weight: 700;
 	font-size: 1.75rem;
 }
+
+.delete_button {
+	background-color: white !important;
+	color: black !important;
+}
+
+.delete_button:hover {
+	background-color: #dddddd !important;
+}
