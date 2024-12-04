@@ -1,10 +1,30 @@
 import { useState, useEffect } from 'react'
 import todoStyle from './TodoList.module.css'
-const initialTodos = ['Fare la spesa', 'Pulire casa', 'Fare il bucato']
+import axios from 'axios'
+// const initialTodos = [
+//   {
+//     "userId": 1,
+//     "id": 1,
+//     "title": "delectus aut autem",
+//     "completed": false
+//   },
+//   {
+//     "userId": 1,
+//     "id": 2,
+//     "title": "quis ut nam facilis et officia qui",
+//     "completed": false
+//   },
+//   {
+//     "userId": 1,
+//     "id": 3,
+//     "title": "fugiat veniam minus",
+//     "completed": false
+//   }
+// ]
 
 export default function TodoList() {
 
-  const [todos,setTodos] = useState(initialTodos)
+  const [todos,setTodos] = useState([])
   const [filteredTodos,setFilteredTodos] = useState(todos)
   const [newTodo,setNewTodo] = useState('')
   const [search,setSearch] = useState('')
@@ -14,6 +34,33 @@ export default function TodoList() {
 
     setNewTodo(e.target.value.trim())
   }
+
+  function fetchTodos() {
+    axios.get(`https://jsonplaceholder.typicode.com/todos`,{
+      params: {
+        _limit: 6,
+        title_like: search
+      }
+    }).then(res =>{
+      setTodos(res.data)
+    })
+    .catch(err => {
+      console.error(err)
+    })
+  }
+
+  useEffect(() => {
+    fetchTodos()
+  },[])
+
+  function filterTodos(e) {
+    e.preventDefault()
+
+    fetchTodos()
+
+  }
+
+  // fetchTodos()
 
   function addTodo(e) {
     e.preventDefault()
@@ -38,13 +85,18 @@ export default function TodoList() {
     // newTodos.push(todo)
     // setTodos(newTodos)
 
-    setTodos([...todos,newTodo]) // crea un nuovo array e lo setta in todos
+    setTodos([...todos,{
+      id: Date.now(),
+      title: newTodo,
+      completed: false,
+      userId: 1
+    }]) // crea un nuovo array e lo setta in todos
     setNewTodo('') // resetta il form
 
   }
 
-  function deleteTodo(todoText) {
-    setTodos(todos.filter(todo => todo !== todoText ))
+  function deleteTodo(id) {
+    setTodos(todos.filter(todo => todo.id !== id ))
   }
 
   useEffect(() => {
@@ -54,9 +106,9 @@ export default function TodoList() {
   useEffect(() => {
     console.log('Search is changed')
     setFilteredTodos(todos.filter((todo) => {
-     return todo.toLowerCase().includes(search.toLowerCase())
+     return todo.title.toLowerCase().includes(search.toLowerCase())
     }))
-  },[todos, search])
+  },[todos])
 
   return (
     <>
@@ -68,17 +120,25 @@ export default function TodoList() {
         </form>
       </div>
       <div className="container">
+        <form onSubmit={filterTodos} action="">
          <input onChange={(e) => setSearch(e.target.value)} type="text" placeholder='Filtra task' value={search}  />
+        </form>
       </div>
       <div className='container'>
-        <ul className={todoStyle.todos} >
-          {filteredTodos.map((todo) => (
-            <li className={todoStyle.todo} key={todo}>
-              <span>{todo}</span>
-              <button onClick={() => deleteTodo(todo)}>Elimina</button>
-            </li>
-          ))}
-        </ul>
+        {filteredTodos.length ? 
+          <ul className={todoStyle.todos} >
+            {filteredTodos.map((todo) => (
+              <li className={todoStyle.todo} key={todo.id}>
+                <span>{todo.title}</span>
+                <button onClick={() => deleteTodo(todo.id)}>Elimina</button>
+              </li>
+            ))}
+          </ul> :
+          <div>
+            Nessuna Todos trovata
+            {/* <button onClick={fetchTodos}>Carica todos</button> */}
+          </div>
+        }
       </div>
     </>
   )

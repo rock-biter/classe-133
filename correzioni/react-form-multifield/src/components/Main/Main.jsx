@@ -22,6 +22,7 @@ export default function Main() {
   const [formData,setFormData] = useState(initialFormData)
 
   useEffect(() => {
+
     setPublishedPosts(posts.filter((post) => post.published === true ))
 
     const tagsItems = []
