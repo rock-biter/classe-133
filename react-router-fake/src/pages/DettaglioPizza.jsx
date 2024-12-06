@@ -1,9 +1,17 @@
 import { useEffect } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useLocation, useNavigate, useParams, useSearchParams } from 'react-router-dom'
 
 export default function DettaglioPizza() {
 
   const { id } = useParams()
+  const location = useLocation()
+  console.log(location)
+
+  const [query] = useSearchParams()
+  console.log(query)
+
+  console.log(query.get('name'))
+  console.log(query.get('age'))
   // console.log(params)
 
   useEffect(() => {

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Card from '../components/Card'
 
 export default function Home() {
 
@@ -24,11 +25,7 @@ export default function Home() {
 
         <ul>
           {pizzas.map(pizza => (
-            <li key={pizza.id}>
-              <Link to={`/pizzas/${pizza.id}`}>
-                {pizza.name}
-              </Link>
-            </li>
+            <Card key={pizza.id} pizza={pizza}/>
           ))}
         </ul>
       </section>
