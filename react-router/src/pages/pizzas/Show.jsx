@@ -2,20 +2,22 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useLocation, useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { BASE_URI } from '../../config'
+import placeHolderImage from '../../assets/placeholder.webp'
+import DeletePizza from '../../components/pizzas/DeletePizza'
 
 export default function Show() {
 
   const [pizza,setPizza] = useState(null)
 
   const { id } = useParams()
-  const location = useLocation()
-  console.log(location)
+  // const location = useLocation()
+  // console.log(location)
 
-  const [query] = useSearchParams()
-  console.log(query)
+  // const [query] = useSearchParams()
+  // console.log(query)
 
-  console.log(query.get('name'))
-  console.log(query.get('age'))
+  // console.log(query.get('name'))
+  // console.log(query.get('age'))
   // console.log(params)
 
   useEffect(() => {
@@ -41,13 +43,14 @@ export default function Show() {
         <button onClick={() => navigate(-1)}>
           back
         </button>
+        {pizza && <DeletePizza id={pizza.id} onDelete={() => { navigate('/pizzas') }}/>}
       </div>
       <section>
         
         {pizza ? 
           <>
             <figure className='hero-pizza'>
-              <img src={`${BASE_URI}/${pizza.image}`} alt="" />
+              <img src={pizza.image ? `${BASE_URI}/${pizza.image}` : placeHolderImage} alt="" />
             </figure>
             <div className="container">
               <h1 className="title">{ pizza.name }</h1>

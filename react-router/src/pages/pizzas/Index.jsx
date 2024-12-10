@@ -27,13 +27,13 @@ export default function Index() {
       <section>
         <div className='container'>
           <h1 className='title'>Le nostre pizze</h1>
-          <Link to="/pizzas/create">Nuova pizza</Link>
+          <Link className='link' to="/pizzas/create">Nuova pizza</Link>
         </div>
         <div className="container">
           <ul className='grid grid-cols-2'>
             {pizzas.map(pizza => (
               <li key={pizza.id}>
-                <Card pizza={pizza}/>
+                <Card onDelete={() => fetchPizzas()} pizza={pizza}/>
               </li>
             ))}
           </ul>

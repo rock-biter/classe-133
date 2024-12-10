@@ -47,7 +47,8 @@ h1 {
 	line-height: 1.1;
 }
 
-button {
+button,
+.link {
 	border-radius: 8px;
 	border: 1px solid transparent;
 	padding: 0.6em 1.2em;
@@ -57,12 +58,17 @@ button {
 	background-color: #1a1a1a;
 	cursor: pointer;
 	transition: border-color 0.25s;
+	display: inline-block;
+	color: white;
 }
-button:hover {
+button:hover,
+.link:hover {
 	border-color: #646cff;
 }
 button:focus,
-button:focus-visible {
+button:focus-visible,
+.link:focus,
+.link:focus-visible {
 	outline: 4px auto -webkit-focus-ring-color;
 }
 
@@ -146,4 +152,28 @@ nav .active {
 	object-fit: cover;
 	object-position: center;
 	display: block;
+}
+
+input:not([type='checkbox'], [type='radio']) {
+	height: 2rem;
+	border: 1px solid #fefefe99;
+	border-radius: 0.5rem;
+	padding: 0 1rem;
+	width: 100%;
+	margin: 0.5rem 0;
+}
+
+.form-group-checkbox {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+input[type='checkbox'] {
+	height: 2rem;
+	margin: 0.5rem 0;
+}
+
+form button {
+	margin: 1rem 0;
 }

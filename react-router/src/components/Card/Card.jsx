@@ -1,5 +1,6 @@
 import placeHolderImage from '../../assets/placeholder.webp'
 import { BASE_URI } from '../../config'
+import DeletePizza from '../pizzas/DeletePizza'
 // import Button from '../../ui/Button/Button'
 import style from './Card.module.css'
 import { Link } from 'react-router-dom'
@@ -24,7 +25,12 @@ export default function Card({ onDelete = () => {}, className, pizza = {} }) {
         {/* <img className={style.thumb} src={image ? image : placeHolderImage} alt="" /> */}
       </div>
       <div className={style.body}>
-        <h3>{name}</h3>
+        <div className={style.header}>
+          <h3>
+            {name}
+          </h3>
+          <DeletePizza onDelete={onDelete} id={id} />
+        </div>
         <p>{testo}</p>
         <p>
           <strong>Ingredients: </strong>{description}
@@ -34,10 +40,8 @@ export default function Card({ onDelete = () => {}, className, pizza = {} }) {
           Add to cart
         </button> */}
         <div className={style.actions}>
-          {/* <Button callback={onDelete} className={style.delete_button} text='Delete' /> */}
-        {/* { isAvailable && <Button callback={addToCart} text='Add to cart' /> } */}
         </div>
-        <Link to={`/pizzas/${id}`}>Vai alla pagina di dettaglio</Link>
+        <Link className='link' to={`/pizzas/${id}`}>Vai alla pagina di dettaglio</Link>
       </div>
     </div>
   )

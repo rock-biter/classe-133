@@ -40,3 +40,10 @@
 .delete_button:hover {
 	background-color: #dddddd !important;
 }
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
