@@ -13,6 +13,17 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
 a {
 	font-weight: 500;
 	/* color: #646cff; */
@@ -68,6 +79,12 @@ button:focus-visible {
 	}
 }
 
+.container {
+	max-width: 1024px;
+	margin: 0 auto;
+	padding: 0 2rem;
+}
+
 .menu {
 	display: flex;
 	align-items: center;
@@ -78,11 +95,11 @@ button:focus-visible {
 }
 
 .nav {
-	padding: 20px;
+	padding: 20px 0;
 }
 
 .footer {
-	padding: 2rem;
+	padding: 2rem 0;
 	background-color: #fdfdfd;
 	color: #333;
 }
@@ -109,6 +126,24 @@ nav .active {
 	color: #646cff;
 }
 
-* {
-	box-sizing: border-box;
+.grid {
+	display: grid;
+	gap: 2rem;
+}
+
+.grid.grid-cols-2 {
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.title {
+	margin: 2rem 0;
+	text-align: center;
+}
+
+.hero-pizza img {
+	width: 100%;
+	height: 300px;
+	object-fit: cover;
+	object-position: center;
+	display: block;
 }

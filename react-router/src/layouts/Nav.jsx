@@ -8,6 +8,9 @@ export default function Nav() {
           <NavLink to='/'>Home</NavLink>
         </li>
         <li>
+          <NavLink to='/pizzas'>Pizzas</NavLink>
+        </li>
+        <li>
           <NavLink to='/about'>About</NavLink>
         </li>
         <li>

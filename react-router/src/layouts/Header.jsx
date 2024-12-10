@@ -3,10 +3,12 @@ import Nav from './Nav';
 export default function Header() {
   return (
     <header>
-      <div>
-        Logo
+      <div className="container">
+        <div>
+          Logo
+        </div>
+        <Nav />
       </div>
-      <Nav />
     </header>
   )
 }

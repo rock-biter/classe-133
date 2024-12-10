@@ -1,0 +1,42 @@
+.card {
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+}
+
+.image {
+	width: 100%;
+	flex-shrink: 0;
+}
+
+.thumb {
+	width: 100%;
+	object-fit: cover;
+	object-position: center;
+	aspect-ratio: 3/2;
+}
+
+.body {
+	padding: 1rem;
+
+	color: black;
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	flex-grow: 1;
+	align-items: flex-start;
+}
+
+.title {
+	font-weight: 700;
+	font-size: 1.75rem;
+}
+
+.delete_button {
+	background-color: white !important;
+	color: black !important;
+}
+
+.delete_button:hover {
+	background-color: #dddddd !important;
+}
