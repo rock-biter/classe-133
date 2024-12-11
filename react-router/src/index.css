@@ -154,7 +154,8 @@ nav .active {
 	display: block;
 }
 
-input:not([type='checkbox'], [type='radio']) {
+input:not([type='checkbox'], [type='radio']),
+select {
 	height: 2rem;
 	border: 1px solid #fefefe99;
 	border-radius: 0.5rem;
@@ -176,4 +177,17 @@ input[type='checkbox'] {
 
 form button {
 	margin: 1rem 0;
+}
+
+.categories {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 2rem;
+
+	margin: 1rem 0;
+
+	button.active {
+		background-color: #646cff;
+	}
 }

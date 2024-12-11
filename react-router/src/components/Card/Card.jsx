@@ -1,13 +1,17 @@
+import { useContext } from 'react'
 import placeHolderImage from '../../assets/placeholder.webp'
 import { BASE_URI } from '../../config'
 import DeletePizza from '../pizzas/DeletePizza'
 // import Button from '../../ui/Button/Button'
 import style from './Card.module.css'
 import { Link } from 'react-router-dom'
+import GlobalContext from '../../context/GlobalContext'
 
-export default function Card({ onDelete = () => {}, className, pizza = {} }) {
+export default function Card({ className, pizza = {} }) {
   // console.log('card props:',props)
   // console.log(isAvailable)
+  const { fetchPizzas } = useContext(GlobalContext)
+
   const { ingredients = [], name, image, price, isAvailable, id } = pizza
 
   const description = ingredients.join(', ') 
@@ -29,7 +33,7 @@ export default function Card({ onDelete = () => {}, className, pizza = {} }) {
           <h3>
             {name}
           </h3>
-          <DeletePizza onDelete={onDelete} id={id} />
+          <DeletePizza onDelete={fetchPizzas} id={id} />
         </div>
         <p>{testo}</p>
         <p>

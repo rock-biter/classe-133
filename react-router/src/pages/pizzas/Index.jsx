@@ -1,22 +1,12 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios'
-import { BASE_URI } from '../../config';
+import { useEffect } from 'react';
 import Card from '../../components/Card/Card';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import GlobalContext from '../../context/GlobalContext';
 
 export default function Index() {
 
-  const [pizzas,setPizzas] = useState([])
-
-  function fetchPizzas() {
-    axios.get(`${BASE_URI}/pizzas`)
-    .then(res => {
-      setPizzas(res.data)
-    })
-    .catch(err => {
-      console.error(err)
-    })
-  }
+  const { categories, pizzas, fetchPizzas } = useContext(GlobalContext)
 
   useEffect(() => {
     fetchPizzas()
@@ -30,10 +20,19 @@ export default function Index() {
           <Link className='link' to="/pizzas/create">Nuova pizza</Link>
         </div>
         <div className="container">
+          <ul className='categories'>
+            {categories.map((category) => (
+              <li key={category}>
+                <button>
+                  {category}
+                </button>
+              </li>
+            ))}
+          </ul>
           <ul className='grid grid-cols-2'>
             {pizzas.map(pizza => (
               <li key={pizza.id}>
-                <Card onDelete={() => fetchPizzas()} pizza={pizza}/>
+                <Card pizza={pizza}/>
               </li>
             ))}
           </ul>

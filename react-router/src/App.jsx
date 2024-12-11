@@ -8,13 +8,31 @@ import PizzasCreate from './pages/pizzas/Create'
 import DefaultLayout from './layouts/DefaultLayout'
 import NotFound from './pages/NotFound'
 import BlankLayout from './layouts/BlankLayout'
+import GlobalContext from './context/GlobalContext'
+import { useState } from 'react'
+import axios from 'axios'
+import { BASE_URI } from './config'
 
 
 function App() {
 
+  const [categories] = useState(['vegane','vegetariane','gluten-free'])
+
+  const [pizzas,setPizzas] = useState([])
+
+  function fetchPizzas() {
+    axios.get(`${BASE_URI}/pizzas`)
+    .then(res => {
+      setPizzas(res.data)
+    })
+    .catch(err => {
+      console.error(err)
+      setPizzas([])
+    })
+  }
 
   return (
-    <>
+    <GlobalContext.Provider value={{ categories, pizzas, fetchPizzas }}>
       <BrowserRouter>
         <Routes>
           <Route element={<DefaultLayout />}>
@@ -36,7 +54,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-    </>
+    </GlobalContext.Provider>
   )
 }
 

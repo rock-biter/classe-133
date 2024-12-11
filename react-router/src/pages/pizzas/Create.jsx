@@ -2,16 +2,21 @@ import axios from 'axios'
 import { useState } from 'react'
 import { BASE_URI } from '../../config'
 import { useNavigate } from 'react-router-dom'
+import { useContext } from 'react'
+import GlobalContext from '../../context/GlobalContext'
 
 const initialFormData = {
   name: '',
   price: '',
   ingredients: '',
   isAvailable: false,
-  image: ''
+  image: '',
+  category: ''
 }
 
 export default function Create() {
+
+  const { categories } = useContext(GlobalContext)
 
   const [formData,setFormData] = useState(initialFormData)
 
@@ -68,6 +73,15 @@ export default function Create() {
             <p className='form-group'>
               <label htmlFor="image">Immagine</label>
               <input onChange={handleFormData} type="text" id='image' name='image' placeholder='URL immagine della pizza' value={formData.image} />
+            </p>
+            <p className='form-group'>
+              <label htmlFor="category">Categoria</label>
+              <select onChange={handleFormData} value={formData.category} name="category" id="category">
+                <option value="">Nessuna</option>
+                {categories.map((cat) => (
+                  <option key={cat} value={cat}>{cat}</option>
+                ))}
+              </select>
             </p>
             <p className='form-group'>
               <label htmlFor="price">Prezzo</label>
