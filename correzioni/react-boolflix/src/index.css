@@ -1,0 +1,32 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+img {
+	max-width: 100%;
+}
+
+a {
+	color: currentColor;
+	text-decoration: none;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+/* LAYOUT */
+.container {
+	max-width: 1024px;
+	padding: 0 2rem;
+	margin: 0 auto;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 2rem;
+}
