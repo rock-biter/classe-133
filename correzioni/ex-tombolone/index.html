@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Vite App</title>
+	</head>
+	<body class="bg-teal-400">
+		<div id="app">
+			<main>
+				<div class="container py-8">
+					<h1 class="text-3xl font-bold text-white text-center">Tombola</h1>
+				</div>
+				<div class="container">
+					<!-- griglia e il widget per estrarre il numero -->
+					<div class="grid grid-cols-4">
+						<div class="col-span-3 numbers grid grid-cols-10 gap-4"></div>
+						<div>
+							<p class="text-center text-sm mb-2">Ultimo numero estratto</p>
+							<div
+								class="last-number w-20 aspect-square flex justify-center items-center bg-white mx-auto font-bold text-4xl"
+							>
+								-
+							</div>
+							<hr class="my-4" />
+							<div class="flex flex-col items-center gap-3">
+								<button
+									class="bg-orange-400 text-white rounded-lg py-3 px-4"
+									id="draw"
+								>
+									Estrai
+								</button>
+								<button
+									class="bg-gray-700 text-white rounded-lg py-3 px-4"
+									id="reset"
+								>
+									Termina Gioco
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+		<script type="module" src="/src/main.js"></script>
+	</body>
+</html>
