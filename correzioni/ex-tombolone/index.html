@@ -10,12 +10,16 @@
 		<div id="app">
 			<main>
 				<div class="container py-8">
-					<h1 class="text-3xl font-bold text-white text-center">Tombola</h1>
+					<h1
+						class="text-3xl lg:text-[120px] font-bold text-white text-center py-20"
+					>
+						Tombola
+					</h1>
 				</div>
 				<div class="container">
 					<!-- griglia e il widget per estrarre il numero -->
-					<div class="grid grid-cols-4">
-						<div class="col-span-3 numbers grid grid-cols-10 gap-4"></div>
+					<div class="grid lg:grid-cols-4">
+						<div class="lg:col-span-3 numbers grid grid-cols-10 gap-4"></div>
 						<div>
 							<p class="text-center text-sm mb-2">Ultimo numero estratto</p>
 							<div
@@ -26,13 +30,13 @@
 							<hr class="my-4" />
 							<div class="flex flex-col items-center gap-3">
 								<button
-									class="bg-orange-400 text-white rounded-lg py-3 px-4"
+									class="bg-orange-400 hover:bg-orange-500 transition-all text-white rounded-lg py-3 px-4"
 									id="draw"
 								>
 									Estrai
 								</button>
 								<button
-									class="bg-gray-700 text-white rounded-lg py-3 px-4"
+									class="bg-gray-700 hover:bg-gray-800 text-white rounded-lg py-3 px-4"
 									id="reset"
 								>
 									Termina Gioco
