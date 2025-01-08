@@ -3,8 +3,13 @@ const connection = require('../data/db')
 function index(req, res) {
 	// recuperiamo l'elenco dei books
 
-	const sql = `SELECT * FROM books`
+	let sql = `SELECT * FROM books`
+
 	// BONUS: aggiungere eventuali filtri
+	// if (req.query.title) {
+	// 	sql += ` WHERE title LIKE '%${req.query.title}%'`
+	// }
+
 	// BONUS: aggiungere paginazione
 	// BONUS: aggiungere ordinamento
 
@@ -20,7 +25,8 @@ function index(req, res) {
 
 function show(req, res) {
 	// console.log(req.params.id)
-	const id = parseInt(req.params.id)
+	const id = req.params.id
+	// if(isNaN(id))
 
 	const sql = `SELECT * FROM books WHERE id = ?`
 
