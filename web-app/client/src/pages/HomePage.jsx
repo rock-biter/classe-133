@@ -4,12 +4,14 @@ import axios from 'axios';
 
 function HomePage() {
 
+  // console.log(import.meta.env)
+
   const [books, setBooks] = useState([])
   const [search, setSearch] = useState('')
 
   function fetchBooks() {
 
-    axios.get('http://localhost:3000/api/books',{
+    axios.get(`${import.meta.env.VITE_API_URL}/books`,{
       params: {
         search: search
       }

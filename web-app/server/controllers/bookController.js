@@ -54,6 +54,7 @@ function show(req, res) {
 			})
 
 		const book = results[0]
+		book.image = `${process.env.BE_HOST}/img/books/${book.image}`
 
 		const sql = `SELECT * FROM reviews WHERE book_id = ?`
 

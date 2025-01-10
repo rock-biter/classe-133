@@ -10,6 +10,19 @@ body {
 	@apply flex flex-col min-h-screen;
 }
 
+.form-control {
+	@apply flex flex-col gap-1;
+}
+
+input:not([type='submit']),
+select {
+	@apply border px-3 h-10 rounded-lg;
+}
+
+textarea {
+	@apply border px-3 py-2 rounded-lg;
+}
+
 /* 
 a[aria-current='page'] {
 	@apply text-blue-950;

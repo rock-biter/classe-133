@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import StarsRating from './StarsRating';
 
 function BookCard({ book }) {
 
@@ -18,9 +19,9 @@ function BookCard({ book }) {
           {abstract}
         </p>
         <div>
-          { avg_vote }
+          <StarsRating vote={avg_vote} className='size-4' />
         </div>
-        <Link className='bg-blue-500 hover:bg-blue-600 text-white px-3 text-xs py-2 rounded-md inline-block' to={`/books/${id}`}>Read more</Link>
+        <Link className='bg-blue-500 hover:bg-blue-600 mt-3 text-white px-3 text-xs py-2 rounded-md inline-block' to={`/books/${id}`}>Read more</Link>
       </div>
     </article>
   )
