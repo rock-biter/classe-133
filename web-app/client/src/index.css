@@ -27,3 +27,34 @@ textarea {
 a[aria-current='page'] {
 	@apply text-blue-950;
 } */
+
+.pulse {
+	animation-name: pulse;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+.spin {
+	animation: spin 1s infinite linear;
+}
+
+/* @keyframes pulse {
+	0% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	100% {
+		opacity: 0.3;
+		transform: translateY(-20px);
+	}
+} */
+
+/* @keyframes spin {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+} */

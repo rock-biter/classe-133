@@ -11,6 +11,9 @@ app.use(
 		origin: process.env.CORS_ORIGIN,
 	})
 )
+app.use(express.json()) // body parser
+// middleware trim
+// middleware nullify empty string
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
