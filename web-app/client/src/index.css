@@ -58,3 +58,7 @@ a[aria-current='page'] {
 		transform: rotate(360deg);
 	}
 } */
+
+.animate-spin {
+	animation: spin 500ms linear infinite;
+}

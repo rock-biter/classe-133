@@ -1,15 +1,20 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import BookCard from '../components/BookCard';
 import axios from 'axios';
+import GlobalContext from '../contexts/globalContext';
 
 function HomePage() {
 
   // console.log(import.meta.env)
 
+  const { setIsLoading } = useContext(GlobalContext)
+
   const [books, setBooks] = useState([])
   const [search, setSearch] = useState('')
 
   function fetchBooks() {
+
+    setIsLoading(true)
 
     axios.get(`${import.meta.env.VITE_API_URL}/books`,{
       params: {
@@ -23,6 +28,10 @@ function HomePage() {
       .catch(err => {
         console.error(err)
       })
+      .finally(() => {
+        setIsLoading(false)
+      })
+    
   }
 
   function searchBooks(e) {

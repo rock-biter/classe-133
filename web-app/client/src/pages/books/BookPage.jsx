@@ -1,18 +1,23 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ReviewCard from '../../components/ReviewCard';
 import axios from 'axios';
 import StarsRating from '../../components/StarsRating';
 import FormReview from '../../components/FormReview';
+import GlobalContext from '../../contexts/globalContext';
 
 function BookPage() {
 
   // recuperare l'id del libro dal path della rotta
   const [book, setBook] = useState(null)
+  const { setIsLoading } = useContext(GlobalContext)
 
   const { id } = useParams()
 
   function fetchBook() {
+
+    setIsLoading(true)
+
     axios.get(`${import.meta.env.VITE_API_URL}/books/${id}`)
     .then(res => {
       setBook(res.data)
@@ -20,6 +25,8 @@ function BookPage() {
     .catch(err => {
       console.error(err)
       // qui dovremmo fare un redirect alla pagina 404
+    }).finally(() => {
+      setIsLoading(false)
     })
   }
 
@@ -28,7 +35,7 @@ function BookPage() {
   },[id])
 
   return (
-  book ? <>
+  book && <>
     <section>
       <div className="container flex gap-6 items-start py-3 my-3 border-b">
         <div>
@@ -64,8 +71,7 @@ function BookPage() {
       <FormReview id={id} onSuccess={fetchBook} />
     </section>
     {/* form per nuova recensione */}
-  </> : 
-  <div>Loading...</div>
+  </>
   )
 }
 

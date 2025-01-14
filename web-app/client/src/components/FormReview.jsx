@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import axios from 'axios'
 import { ArrowPathIcon } from '@heroicons/react/24/outline' 
+import GlobalContext from '../contexts/globalContext'
 
 const initialFormData = {
   vote: 1,
@@ -12,6 +13,8 @@ function FormReview({ id, onSuccess = () => {} }) {
 
   const [formData,setFormData] = useState(initialFormData)
   const [isFormValid,setIsFormValid] = useState(true)
+
+  const { setIsLoading } = useContext(GlobalContext)
 
   function onFormChange(e) {
     const { value, name: propName } = e.target
@@ -41,11 +44,13 @@ function FormReview({ id, onSuccess = () => {} }) {
     }
 
     // validazione lato client
-    if(!data.name || !data.vote || data.vote < 1 || data.vote > 5) {
-      console.log('form is not valid')
-      setIsFormValid(false)
-      return
-    }
+    // if(!data.name || !data.vote || data.vote < 1 || data.vote > 5) {
+    //   console.log('form is not valid')
+    //   setIsFormValid(false)
+    //   return
+    // }
+
+    setIsLoading(true)
 
     axios.post(`${import.meta.env.VITE_API_URL}/books/${id}/reviews`,data)
     .then(res => {
@@ -57,6 +62,8 @@ function FormReview({ id, onSuccess = () => {} }) {
     }).catch(err => {
       console.log(err)
       setIsFormValid(false)
+
+      setIsLoading(false)
     })
   }
 
@@ -73,7 +80,7 @@ function FormReview({ id, onSuccess = () => {} }) {
           <form onSubmit={storeReview} className={`flex flex-col gap-3 ${!isFormValid ? 'animate__animated animate__shakeX': ''}`}>
             <p className='form-control'>
               <label htmlFor="name">Nome *</label>
-              <input required type="text" placeholder='Anonymous' name='name' id='name' value={formData.name} onChange={onFormChange} />
+              <input type="text" placeholder='Anonymous' name='name' id='name' value={formData.name} onChange={onFormChange} />
             </p>
             <p className='form-control'>
               <label htmlFor="text">Recensione</label>
